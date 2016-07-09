@@ -1,0 +1,43 @@
+/*Customize bootstap navbar*/
+.navbar{
+    background-color: #337ab7;
+}
+
+.nav.navbar-nav li a{
+    color: white;
+}
+
+.navbar-default .navbar-nav > .active{
+    color: #000;
+    background: #2e6da4;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: #2e6da4;
+}
+/*.. End..*/
+
+
+/*Customize bootstap navbar dropdown*/
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,
+.navbar-default .navbar-nav .open .dropdown-menu {
+    background-color: #2e6da4;
+    color:#ffffff;
+}
+/*.. End..*/
+
+/* Align carousel image to center*/
+.carousel-inner img {
+    margin: auto;
+}
+/*.. End..*/
+
+.panel-default > .panel-heading {
+    background-color: #2e6da4;
+}
+
+.filter-cat{
+    margin: 3px;
+}
