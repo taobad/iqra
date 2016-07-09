@@ -29,7 +29,7 @@ Route::auth();
 
 //Route::get('/home', 'HomeController@index');
 
-Route::get('/', 'pageController@getIndex');
+Route::get('/', 'PageController@getIndex');
 Route::get('/calendar', 'PageController@getCalendar');
 Route::get('/news', ['as' => 'news.index','uses'=> 'PageController@getNews']);
 Route::get('/events', ['as' => 'news.events','uses'=> 'PageController@getEvents']);
