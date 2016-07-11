@@ -6,16 +6,28 @@
 
 @section('content')
     <div class="row">
-        {!! Form::model($post,['route' => ['posts.update',$post->id],'method'=>'PUT']) !!}
+        {!! Form::model($post,['route' => ['posts.update',$post->id],'method'=>'PUT','files'=>true]) !!}
+
         <div class="col-md-8">
-            {{Form::label('title','Title:')}}
-            {{Form::text('title',null,['class' => 'form-control input-lg'])}}
-            <br>
-            {{Form::label('categories','Categories:')}}
-            {{Form::select('categories[]',$categories,null,['class' => 'form-control select2-multi','multiple'=>'multiple'])}}
-            <br>
-            {{Form::label('body','Body:')}}
-            {{Form::textarea('body',null,['class' => 'form-control'])}}
+            <div class="form-group">
+                {{Form::label('title','Title:')}}
+                {{Form::text('title',null,['class' => 'form-control input-lg'])}}
+            </div>
+
+            <div class="form-group">
+                {{Form::label('categories','Categories:')}}
+                {{Form::select('categories[]',$categories,null,['class' => 'form-control select2-multi','multiple'=>'multiple'])}}
+            </div>
+
+            <div class="form-group">
+                {{Form::label('body','Body:')}}
+                {{Form::textarea('body',null,['class' => 'form-control'])}}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('images','Post Images') !!}
+                {!! Form::file('images[]', ['class' => 'form-control','multiple'=>true]) !!}
+            </div>
             <br>
             <div class="row">
                 <div class="row col-sm-5 col-sm-offset-1">

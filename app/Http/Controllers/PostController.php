@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Post;
+use App\Image as Img;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 use Session;
 
 use App\Http\Requests;
 
 class PostController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -25,7 +27,7 @@ class PostController extends Controller
     {
         $categories = Category::all();
         $posts = Post::orderBy('id','desc')->paginate(10);
-        return view('blog.posts.index')->withPosts($posts)->withCategories($categories);
+        return view('blog.admin.posts.index')->withPosts($posts)->withCategories($categories);
     }
 
     /**
@@ -37,7 +39,7 @@ class PostController extends Controller
     {
         //
         $categories = Category::all();
-        return view('blog.posts.create')->withCategories($categories);
+        return view('blog.admin.posts.create')->withCategories($categories);
     }
 
     /**
@@ -66,6 +68,21 @@ class PostController extends Controller
             $post->categories()->sync(array());
         }
 
+        $images = $request->file('images');
+        if(isset($images)){
+            $filePath = 'img/posts/'.$post->id.'/';
+            File::makeDirectory(public_path($filePath));
+            foreach ($images as $image){
+                $filename = $image->getClientOriginalName();
+                //Image::make($image)->resize(500,500)->save(public_path($filePath.$filename));
+                Image::make($image)->save(public_path($filePath.$filename));
+
+                $img = new Img;
+                $img->name = $filename;
+                $post->images()->save($img);
+            }
+        }
+
         Session::flash('success','blog post successfully saved!');
         //or
         //session()->flash('success','blog post successfully saved!');
@@ -82,7 +99,7 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
-        return view('blog.posts.show')->withPost($post);
+        return view('blog.admin.posts.show')->withPost($post);
     }
 
     /**
@@ -102,7 +119,7 @@ class PostController extends Controller
             $cats[$category->id] = $category->name;
         }
 
-        return view('blog.posts.edit')->withPost($post)->withCategories($cats);
+        return view('blog.admin.posts.edit')->withPost($post)->withCategories($cats);
     }
 
     /**
@@ -130,6 +147,32 @@ class PostController extends Controller
             $post->categories()->sync($request->categories, true);
         } else{
             $post->categories()->sync(array());
+        }
+
+        $images = $request->file('images');
+        if(isset($images)){
+            //empty folder before updating
+            $filePath = 'img/posts/'.$post->id.'/';
+            File::cleanDirectory(public_path($filePath));
+
+            //delete file names from database
+            $post->images()->delete();
+
+            //recreate directory if deleted
+            if(!File::exists(public_path($filePath))) {
+                // path does not exist
+                File::makeDirectory(public_path($filePath));
+            }
+
+            foreach ($images as $image){
+                $filename = $image->getClientOriginalName();
+                //Image::make($image)->resize(600,300)->save(public_path($filePath.$filename));
+                Image::make($image)->save(public_path($filePath.$filename));
+
+                $img = new Img;
+                $img->name = $filename;
+                $post->images()->save($img);
+            }
         }
 
         Session::flash('success','blog post successfully edited!');

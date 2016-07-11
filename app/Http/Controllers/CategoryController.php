@@ -25,7 +25,7 @@ class CategoryController extends Controller
         //
         $categories = Category::all();
 
-        return view('blog.categories.index')->withCategories($categories);
+        return view('blog.admin.categories.index')->withCategories($categories);
     }
 
     /**
@@ -72,7 +72,7 @@ class CategoryController extends Controller
         $categories = Category::all();
         $category = Category::find($id);
         $posts = $category->posts()->orderBy('created_at','desc')->paginate(10);
-        return view('blog.categories.category')->withCategories($categories)->withCategory($category)->withPosts($posts);
+        return view('blog.admin.categories.category')->withCategories($categories)->withCategory($category)->withPosts($posts);
     }
 
     /**
