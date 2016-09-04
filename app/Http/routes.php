@@ -35,6 +35,7 @@ Route::get('/news', ['as' => 'news.index','uses'=> 'PageController@getNews']);
 Route::get('/events', ['as' => 'news.events','uses'=> 'PageController@getEvents']);
 Route::get('/awards', ['as' => 'news.awards','uses'=> 'PageController@getAwards']);
 Route::get('/about','PageController@getAbout');
+//Route::get('/about',['uses' => 'PageController@getAbout','middleware'=>['auth','roles'], 'roles' => ['Admin']]);
 Route::get('/contact','PageController@getContact');
 Route::get('/news/{id}', ['as' => 'news.single','uses'=> 'PageController@getSingle']);
 Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController@getCategories']);
@@ -42,8 +43,10 @@ Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController
 //Route::get('/blog', ['as' => 'blog.index','uses'=> 'BlogController@getIndex']);
 
 
-//Post routes
-Route::resource('posts','PostController');
+Route::group(['middleware'=>'roles', 'roles' => ['Admin']], function (){
+    //Post routes
+    Route::resource('posts','PostController');
 
-//Categories Controller
-Route::resource('categories','CategoryController',['except' => ['create']]);
+    //Categories Controller
+    Route::resource('categories','CategoryController',['except' => ['create']]);
+});
