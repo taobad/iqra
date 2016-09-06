@@ -66,7 +66,8 @@ class PostController extends Controller
         $this->validate($request,[
             'title' => 'required|max:255',
             'body' => 'required',
-            'images' => 'sometimes|image'
+            'images' => 'sometimes',
+            'images.*' => 'image'
         ]);
 
         $post = new Post;
@@ -151,7 +152,8 @@ class PostController extends Controller
         $this->validate($request,[
             'title' => 'required|max:255',
             'body' => 'required',
-            'images' => 'sometimes|image'
+            'images' => 'sometimes',
+            'images.*' => 'image'
         ]);
 
 
