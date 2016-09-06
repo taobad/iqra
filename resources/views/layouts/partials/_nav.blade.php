@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{route('home')}}">{!! Html::image('img/iqra_logo.png', 'iqra_logo',['width'=>200,'height'=>30,'style'=>'margin-top:-5px']) !!}</a>
+            <a class="navbar-brand" class="color: #fff;" href="{{route('home')}}"> IQRA COLLEGE ILORIN </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
