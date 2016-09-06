@@ -9,17 +9,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">IQRA SCHOOLS</a>
+            <a class="navbar-brand" href="{{route('home')}}">{!! Html::image('img/iqra_logo.png', 'iqra_logo',['width'=>200,'height'=>30,'style'=>'margin-top:-5px']) !!}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{{Request::is('/') ? "active":""}}"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-                <li class="{{Request::is('calendar') ? "active":""}}"><a href="calendar">Calendar</a></li>
+                <li class="{{Request::is('calendar') ? "active":""}}"><a href="{{route('calendar')}}">Calendar</a></li>
                 <li class="{{Request::is('news') ? "active":""}}"><a href="{{route('news.index')}}">News</a></li>
-                <li class="{{Request::is('about') ? "active":""}}"><a href="about">About</a></li>
-                <li class="{{Request::is('contact') ? "active":""}}"><a href="contact">Contact</a></li>
+                <li class="{{Request::is('about') ? "active":""}}"><a href="{{route('about')}}">About</a></li>
+                <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(Auth::check())
@@ -27,7 +27,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome {{Auth::user()->name}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{route('posts.index')}}">Posts</a></li>
-                        {{--<li><a href="{{route('categories.index')}}">Category</a></li>--}}
+                        <li><a href="{{route('uploadsliderimages.get')}}">Upload Slider Images</a></li>
                         <li><a href="{{url('logout')}}">Logout</a></li>
                     </ul>
                 </li>

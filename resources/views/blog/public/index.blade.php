@@ -14,7 +14,7 @@
                 <div class="post">
                     <h2>{{$post->title}}</h2>
                     <h5>Published: {{date('M,j,Y h:ia',strtotime($post->created_at))}}</h5>
-                    <p>{{substr($post->body,0,300)}}{{strlen($post->body) > 300 ? "...":""}}</p>
+                    <p>{{substr(strip_tags($post->body),0,300)}} {{strlen(strip_tags($post->body)) > 300 ? "...":""}}</p>
                     <a href="{{route('news.single',$post->id)}}" class="btn btn-primary"> Read more</a>
                 </div>
                 <hr>

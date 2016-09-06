@@ -11,7 +11,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RoleTableSeeder::class);
-        $this->call(UserTableSeeder::class);
+      Eloquent::unguard();
+
+          if (App::environment() === 'production')
+          {
+            $this->call(RoleTableSeeder::class);
+            $this->call(UserTableSeeder::class);
+            $this->call(CategoryTableSeeder::class);
+          }
+          else
+          {
+            $this->call(RoleTableSeeder::class);
+            $this->call(UserTableSeeder::class);
+            $this->call(CategoryTableSeeder::class);
+          }
     }
 }

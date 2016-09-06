@@ -5,31 +5,86 @@
 @section('content')
     <div class="row">
         <div class="col-md-8">
-            <h1>{{$post->title}}</h1>
-            <p class="lead">{{$post->body}}</p>
-            <div class="row">
-                @if($post->images()->count() > 0)
-                    @include('layouts.partials._posts_image_slider')
-                @endif
+          <div class="row">
+              @if($post->images()->count() > 0)
+                  @include('layouts.partials._posts_image_slider')
+              @endif
+          </div>
+          <h1>{{$post->title}}</h1>
+          <p class="lead">{!!$post->body!!}</p>
+          <hr>
+
+          <div id="backend-comments" style="margin-top: 50px;">
+                <h3>Comments <small> {{ $post->comments()->count() }} total </small></h3>
+                <?php $counts = $post->comments()->count() ?>
+                @if($counts > 0)
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th> Name </th>
+                      <th> Email </th>
+                      <th> Comment </th>
+                      <th width ="60px"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    @foreach($post->comments as $comment)
+                      <tr>
+                        <td>{{ $comment->user->name }}</td>
+                        <td>{{ $comment->user->email }}</td>
+                        <td>{{ $comment->comment }}</td>
+                        <td>
+                          <a href="{{route('comments.edit',$comment->id)}}" class='btn btn-xs btn-primary'><span class="glyphicon glyphicon-pencil"></span></a>
+                          <a href="{{route('comments.delete',$comment->id)}}" class='btn btn-xs btn-danger'><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              @endif
             </div>
-            <hr>
-            <div class="row">
-                <div class="row col-sm-5 col-sm-offset-1">
-                    {!! Html::linkRoute('posts.edit','Edit',[$post->id],['class'=>'btn btn-primary btn-block']) !!}
+
+
+            <div class="col-md-12">
+                <hr>
+                      <!-- Modal -->
+                <div id="myModal" class="modal fade col-md-6 col-md-offset-3" role="dialog">
+                  <div class="modal-dialog">
+
+                   <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Are you sure you want to delete the post?</h4>
+                      </div>
+                      <div class="modal-body">
+                      <!--<p><input type="text" name="search" id="searchtext" class="form-control"><br></p>-->
+                      {!! Form::open(array('route' => ['posts.destroy',$post->id],'method'=>'DELETE')) !!}
+                      </div>
+                      <div class="modal-footer">
+                          {{Form::submit('Delete',['class'=>  "btn btn-danger app-button" ])}}
+                          {{Form::button('Close',['class' => 'btn btn-primary app-button','data-dismiss' => 'modal'])}}
+                        {!! Form::close() !!}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="row col-sm-5 col-sm-offset-1">
-                    {!! Form::open(array('route' => ['posts.destroy',$post->id],'method'=>'DELETE')) !!}
-                    {{Form::submit('Delete',['class'=>  "btn btn-danger btn-block" ])}}
-                    {!! Form::close() !!}
-                </div>
-            </div>
+              </div>
+
         </div>
 
         <div class="col-md-3 col-sm-offset-1">
             <div class="well">
                 <div class="row">
+                  <div class="col-md-12 app-button">
+                      {!! Html::linkRoute('posts.edit','Edit Post',[$post->id],['class'=>'btn btn-primary btn-block','style' => 'padding: 10px 0px;']) !!}
+                  </div>
+                  <div class="col-md-12 app-button">
+                      <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">Delete Post</button>
+                  </div>
                     <hr>
-                    <div class="col-md-12">
+                    <div class="col-md-12 app-button">
                         {!! Html::linkRoute('posts.index','<<See All Posts',[],['class'=>'btn btn-default bt-h1-spacing btn-block']) !!}
                     </div>
                 </div>

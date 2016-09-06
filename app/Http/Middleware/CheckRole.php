@@ -18,7 +18,7 @@ class CheckRole
     {
         if ($request->user() == null){
           //return response ("Insufficient Permissions",401);
-          return Redirect::back()->withErrors(['Operation requires a different user role or permission']);
+          return redirect()->guest('login');
         }
         $actions = $request->route()->getAction();
         $roles = isset($actions['roles']) ? $actions['roles'] : null;

@@ -3,8 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h1>Calendar</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos distinctio earum eos esse magnam minima nobis odio, odit quae quas quisquam, quod ratione reprehenderit, repudiandae velit vitae! Et, iste.</p>
+            <iframe src="https://calendar.google.com/calendar/embed?src=info%40iqracollege.net&ctz=Africa/Lagos" style="border: 0" width="800" height="600" frameborder="0" scrolling="no">
+            </iframe>
         </div>
     </div>
 @endsection

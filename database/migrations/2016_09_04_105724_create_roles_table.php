@@ -18,6 +18,14 @@ class CreateRolesTable extends Migration
             $table->string('description');
             $table->timestamps();
         });
+
+      /*  DB::table('roles')
+       ->insert(
+         array(
+           array('name' => 'Admin' ,'description' => 'An administrator user'),
+           array('name' => 'User','description' => 'A normal user'),
+         )
+       );*/
     }
 
     /**
