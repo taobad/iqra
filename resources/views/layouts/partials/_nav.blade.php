@@ -26,8 +26,10 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome {{Auth::user()->name}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                    @role('admin')
                         <li><a href="{{route('posts.index')}}">Posts</a></li>
                         <li><a href="{{route('uploadsliderimages.get')}}">Upload Slider Images</a></li>
+                    @endrole
                         <li><a href="{{url('logout')}}">Logout</a></li>
                     </ul>
                 </li>

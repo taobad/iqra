@@ -56,9 +56,9 @@ Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController
 //Route::get('/blog', ['as' => 'blog.index','uses'=> 'BlogController@getIndex']);
 
 
-Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsController@store','middleware'=>'roles', 'roles' => ['User','Admin']]);
+Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsController@store','middleware'=>['role:user|admin']]);
 
-Route::group(['middleware'=>'roles', 'roles' => ['Admin']], function (){
+Route::group(['middleware'=>['auth','role:admin']], function (){
     //register users
     Route::get('register', 'PageController@getRegister');
     Route::post('register', 'PageController@postRegister');

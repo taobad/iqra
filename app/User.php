@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+
 
 class User extends Authenticatable
 {
+    use EntrustUserTrait;
     /**
      * The attributes that are mass assignable.
      *
@@ -28,7 +31,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Comment');
     }
 
-    public function roles(){
+    /*public function roles(){
       return $this->belongsToMany('App\Role');
     }
 
@@ -52,6 +55,6 @@ class User extends Authenticatable
           return true;
         }
         return false;
-    }
+    }*/
 
 }
