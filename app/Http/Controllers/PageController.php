@@ -117,33 +117,6 @@ class PageController extends Controller
         return view('blog.public.category')->withCategory($category)->withPosts($posts);
     }
 
-    public function getRegister(){
-        return view('auth.register');
-    }
-
-
-    public function postRegister(Request $request)
-    {
-        //
-        $this->validate($request,[
-          'firstname' => 'required|max:255',
-          'lastname' => 'required|max:255',
-          'email' => 'required|email|max:255|unique:users',
-          'password' => 'required|min:6|confirmed',
-        ]);
-
-        $user = new User();
-        $user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->save();
-        $user->roles()->attach('user');
-
-        Session::flash('success',' New user added!');
-        return redirect('/');
-    }
-
     public function getSliderImages(){
         return view('pages.uploadSliderImg');
     }
@@ -154,7 +127,7 @@ class PageController extends Controller
           //
           $this->validate($request,[
               'images' => 'required',
-              'images.*' => 'image|mimes:jpg,jpeg'
+              'images.*' => 'image|mimes:jpg,jpeg,png'
           ]);
 
           $images = $request->file('images');
@@ -172,10 +145,13 @@ class PageController extends Controller
               }
               $i = 1;
               foreach ($images as $image){
-                  $filename = 'iq_'.$i.'.jpeg';//.$image->getClientOriginalExtension();
-                  //Image::make($image)->resize(500,500)->save(public_path($filePath.$filename));
+                  $filename = 'iq_'.$i.'.jpeg';
 
-                  Image::make($image)->save(public_path($filePath.$filename));
+                  if($image->getClientOriginalExtension() == 'jpeg' ){
+                    Image::make($image)->resize(1200,400)->save(public_path($filePath.$filename));
+                  } else {
+                    $jpg = (string) Image::make($image)->encode('jpeg',100)->resize(1200,400)->save(public_path($filePath.$filename));
+                  }
                   $i++;
               }
           }
