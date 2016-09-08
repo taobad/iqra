@@ -126,17 +126,19 @@ class PageController extends Controller
     {
         //
         $this->validate($request,[
-          'name' => 'required|max:255',
+          'firstname' => 'required|max:255',
+          'lastname' => 'required|max:255',
           'email' => 'required|email|max:255|unique:users',
           'password' => 'required|min:6|confirmed',
         ]);
 
         $user = new User();
-        $user->name = $request->name;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
-        $user->roles()->attach('User');
+        $user->roles()->attach('user');
 
         Session::flash('success',' New user added!');
         return redirect('/');

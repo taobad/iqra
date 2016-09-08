@@ -33,25 +33,26 @@
           <div class="col-md-12">
             <h1>Contact Us</h1>
             <hr>
-                <form action="{{route('contact.post')}}" method="post">
-                  {{ csrf_field()}}
-                    <div class="form-group">
-                        <label name="email">Email:</label>
-                        <input id="email" name="email" class="form-control">
-                    </div>
+            {!! Form::open(array('route' => 'contact.post')) !!}
 
-                    <div class="form-group">
-                        <label name="subject">Subject:</label>
-                        <input id="subject" name="message" class="form-control">
-                    </div>
+                <div class="form-group">
+                    {{Form::label('email','Email:')}}
+                    {{Form::text('email',null,['class'=>'form-control'])}}
+                </div>
 
-                    <div class="form-group">
-                        <label name="message">Message:</label>
-                        <textarea id="message" name="message" rows= "6" class="form-control" placeholder="Type your message here"></textarea>
-                    </div>
+                <div class="form-group">
+                    {{Form::label('subject','Subject:')}}
+                    {{Form::text('subject',null,['class'=>'form-control'])}}
+                </div>
 
-                    <input type="submit" class="btn btn-success" value="submit">
-                </form>
+                <div class="form-group">
+                    {{Form::label('message','Message:')}}
+                    {{Form::textarea('message',null,['class'=>'form-control'])}}
+                </div>
+
+                {{Form::submit('Send Message',['class' => 'btn btn-primary btn-lg btn-block','style' => 'margin-top:20px'])}}
+            {!! Form::close() !!}
+
           </div>
 
         </div>

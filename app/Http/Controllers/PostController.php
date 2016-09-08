@@ -34,7 +34,7 @@ class PostController extends Controller
 
     public function search(Request $request)
     {
-        $posts = Post::where('title','LIKE','%'.$request->title.'%')->paginate();
+        $posts = Post::where('title','LIKE','%'.$request->title.'%')->paginate(10);
         $categories = Category::all();
         //$posts = Post::orderBy('id','desc')->paginate(10);
         return view('blog.admin.posts.index')->withPosts($posts)->withCategories($categories);

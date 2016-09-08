@@ -58,6 +58,8 @@ Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController
 
 Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsController@store','middleware'=>['role:user|admin']]);
 
+
+//Admin routes
 Route::group(['middleware'=>['auth','role:admin']], function (){
     //register users
     Route::get('register', 'PageController@getRegister');
@@ -77,4 +79,12 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     //uploadsliderimages
     Route::get('/uploadsliderimages',['as' => 'uploadsliderimages.get','uses'=>'pageController@getSliderImages']);
     Route::post('/uploadsliderimages',['as' => 'uploadsliderimages.post','uses'=>'pageController@postSliderImages']);
+
+    //manage users
+    Route::resource('users','ManageUserController');
+    Route::post('searchusers',['as' => 'users.search','uses'=>'ManageUserController@search']);
+    Route::post('updateprofile',['as' => 'users.userUpdate','uses'=>'ManageUserController@search']);
+
+    //list of users with a certain role
+    Route::get('roles/{role_id}',['as' => 'roles.show','uses'=>'RolesController@show']);
 });

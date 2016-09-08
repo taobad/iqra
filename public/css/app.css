@@ -40,6 +40,7 @@
 
 .filter-cat{
     margin: 3px;
+    display: inline-block;
 }
 
 /* jssor slider arrow navigator skin 02 css */
@@ -157,6 +158,12 @@
   height: 50px;
   border-radius: 50%;
   float:left;
+}
+
+.profileImage{
+  width:200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .author-name{
