@@ -7,9 +7,13 @@
         <div class="col-md-12">
           <div class="col-md-6">
               @if($post->images()->count() > 0)
-                  @include('layouts.partials._posts_image_slider')
+                 @include('layouts.partials._posts_image_slider')
+
               @endif
           </div>
+
+
+        </div>
 
           <div class="col-md-12">
             <h1>{{$post->title}}</h1>

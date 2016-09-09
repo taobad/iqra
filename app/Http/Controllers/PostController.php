@@ -89,13 +89,12 @@ class PostController extends Controller
             File::makeDirectory(public_path($filePath));
             foreach ($images as $image){
                 $filename = $image->getClientOriginalName();
-                //Image::make($image)->resize(500,500)->save(public_path($filePath.$filename));
+
                 $img = new Img;
                 $img->name = $filename;
                 $post->images()->save($img);
 
                 Image::make($image)->save(public_path($filePath.$filename));
-
 
             }
         }
@@ -185,7 +184,6 @@ class PostController extends Controller
 
             foreach ($images as $image){
                 $filename = $image->getClientOriginalName();
-                //Image::make($image)->resize(600,300)->save(public_path($filePath.$filename));
                 Image::make($image)->save(public_path($filePath.$filename));
 
                 $img = new Img;
