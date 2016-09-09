@@ -8,7 +8,6 @@
           <div class="col-md-6">
               @if($post->images()->count() > 0)
                  @include('layouts.partials._posts_image_slider')
-
               @endif
           </div>
 
