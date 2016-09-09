@@ -10,6 +10,7 @@
                  @include('layouts.partials._posts_image_slider')
               @endif
           </div>
+          
 
 
         </div>
