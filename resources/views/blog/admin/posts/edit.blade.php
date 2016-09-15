@@ -28,6 +28,11 @@
             </div>
 
             <div class="form-group">
+                {{Form::label('eventdate','Event Date:')}}
+                {{Form::date('eventdate',null)}}
+            </div>
+
+            <div class="form-group">
                 {{Form::label('body','Body:')}}
                 {{Form::textarea('body',null,['class' => 'form-control'])}}
             </div>

@@ -33,6 +33,11 @@
                 </div>
 
                 <div class="form-group">
+                    {{Form::label('eventdate','Event Date:')}}
+                    <input name="eventdate" type="date">
+                </div>
+
+                <div class="form-group">
                     {{Form::label('body','Post Body:')}}
                     {{Form::textarea('body',null,['class'=>'form-control'])}}
                 </div>

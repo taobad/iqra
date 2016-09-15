@@ -65,12 +65,14 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'body' => 'required',
             'images' => 'sometimes',
-            'images.*' => 'image'
+            'images.*' => 'image',
+            'eventdate' => 'sometimes|date'
         ]);
 
         $post = new Post;
         $post->title = $request->title;
         $post->body = Purifier::clean($request->body);
+        $post->eventdate = $request->eventdate;
 
         $post->save();
 
@@ -86,15 +88,20 @@ class PostController extends Controller
         if(!(empty($imageEmpty))){
             //$images = $request->file('images');
             $filePath = 'img/posts/'.$post->id.'/';
-            File::makeDirectory(public_path($filePath));
+            if(!File::exists(public_path($filePath))) {
+                // path does not exist
+                File::makeDirectory(public_path($filePath));
+            }
             foreach ($images as $image){
                 $filename = $image->getClientOriginalName();
+                $filenamethumb = 'thumbnail'.$filename;
 
                 $img = new Img;
                 $img->name = $filename;
                 $post->images()->save($img);
 
                 Image::make($image)->save(public_path($filePath.$filename));
+                Image::make($image)->resize(60,40)->save(public_path($filePath.$filenamethumb));
 
             }
         }
@@ -150,12 +157,14 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'body' => 'required',
             'images' => 'sometimes',
-            'images.*' => 'image'
+            'images.*' => 'image',
+            'eventdate' => 'sometimes|date'
         ]);
 
 
         $post->title = $request->title;
         $post->body = Purifier::clean($request->body);
+        $post->eventdate = $request->eventdate;
 
         $post->save();
 
@@ -184,7 +193,10 @@ class PostController extends Controller
 
             foreach ($images as $image){
                 $filename = $image->getClientOriginalName();
+                $filenamethumb = 'thumbnail'.$filename;
+
                 Image::make($image)->save(public_path($filePath.$filename));
+                Image::make($image)->resize(60,40)->save(public_path($filePath.$filenamethumb));
 
                 $img = new Img;
                 $img->name = $filename;

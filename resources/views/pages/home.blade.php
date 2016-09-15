@@ -3,6 +3,15 @@
 @section('content')
     <div class="container">
 
+      <div class="jumbotron jumbo">
+        {!! Html::image('img/iqralogo.png', 'iqralogo', ['width' => 50,'height'=> 50]) !!}
+
+        <div>
+          <h1> Welcome to Iqra College, ILorin. </h1>
+          <p>where we train students to be future leaders</p>
+        </div>
+      </div>
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -73,11 +82,23 @@
                     <div class="panel-heading"><h4>Upcoming Events</h4></div>
 
                     <div class="panel-body">
-                        <ul>
-                            @foreach($events as $event)
-                            <li><p><i><a href="{{route('news.single',$event->id)}}">{{$event->title}}<small> - 02/04/2016</small></a></i></p></li>
-                            @endforeach
-                        </ul>
+                        @foreach($events as $event)
+                          <div class="list-group">
+                              <a href="{{route('news.single',$event->id)}}" class="list-group-item">
+                                <h4 class="list-group-item-heading text-not-overflow">
+                                  {{$event->title}}
+                                </h4>
+
+                                <p class="list-group-item-text text-not-overflow">{{substr(strip_tags($event->body),0,70)}} {{strlen(strip_tags($event->body)) > 70 ? "...":""}}</p>
+
+                                <span style="">
+                                  <i class="glyphicon glyphicon-calendar"></i>
+                                  {{$event->eventdate}}
+                                </span>
+                              </a>
+                          </div>
+                        @endforeach
+
                         <div class="col-md-8 col-md-offset-2">
                             {!! Html::linkRoute('news.events','See More >>',[],['class'=>'btn btn-default bt-h1-spacing btn-block']) !!}
                         </div>
@@ -89,19 +110,24 @@
                     <div class="panel-heading"><h4>Awards</h4></div>
 
                     <div class="panel-body">
-                        <ul>
-                            @foreach($awards as $award)
-                                <li><p><i><a href="{{route('news.single',$award->id)}}">{{$award->title}}<small> - 02/04/2016</small></a></i></p></li>
-                            @endforeach
-                        </ul>
-                        <div class="col-md-8 col-md-offset-2">
-                            {!! Html::linkRoute('news.awards','See More >>',[],['class'=>'btn btn-default bt-h1-spacing btn-block']) !!}
+                      @foreach($awards as $award)
+                        <div class="list-group">
+                            <a href="{{route('news.single',$award->id)}}" class="list-group-item">
+                              <h4 class="list-group-item-heading text-not-overflow">
+                                {{$award->title}}
+                              </h4>
+
+                              <p class="list-group-item-text text-not-overflow">{{substr(strip_tags($award->body),0,70)}} {{strlen(strip_tags($award->body)) > 70 ? "...":""}}</p>
+                            </a>
                         </div>
+                      @endforeach
+                      <div class="col-md-8 col-md-offset-2">
+                        {!! Html::linkRoute('news.awards','See More >>',[],['class'=>'btn btn-default bt-h1-spacing btn-block']) !!}
                     </div>
-
                 </div>
-            </div>
 
+              </div>
+          </div>
         </div>
 
     </div>

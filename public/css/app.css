@@ -43,6 +43,18 @@
     display: inline-block;
 }
 
+.jumbo{
+    background-color: #2e6da4;
+    color: #CACECF;
+}
+
+.jumbo>img{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
 /* jssor slider arrow navigator skin 02 css */
 /*
 .jssora02l                  (normal)
@@ -197,8 +209,8 @@
 }
 
 #gallery-images img{
-  width: 240px;
-  height: 160px;
+  width: 60px;
+  height: 40px;
   border: 2px solid black;
   margin-bottom: 10px;
 
@@ -215,4 +227,8 @@
   list-style: none;
   float: left;
   padding-right: 10px;
+}
+
+.text-not-overflow{
+    word-wrap: break-word;
 }
