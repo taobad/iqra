@@ -12,6 +12,11 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
+
+        $category = new Category();
+        $category->name = 'News';
+        $category->save();
+
         $category = new Category();
         $category->name = 'Awards';
         $category->save();
@@ -21,7 +26,11 @@ class CategoryTableSeeder extends Seeder
         $category->save();
 
         $category = new Category();
-        $category->name = 'News';
+        $category->name = 'Facilities';
+        $category->save();
+
+        $category = new Category();
+        $category->name = 'Admissions';
         $category->save();
     }
 }

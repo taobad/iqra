@@ -18,6 +18,8 @@ class PageController extends Controller
     protected $news = 'News';
     protected $awards = 'Awards';
     protected $events = 'Events';
+    protected $facilities = 'Facilities';
+    protected $admissions = 'Admissions';
 
     public function getIndex(){
         /*$news = Category::orderBy('categories.id','desc')->join('posts', 'categories.id', '=', 'posts.category_id')
@@ -77,6 +79,22 @@ class PageController extends Controller
     public function getAbout()
     {
         return view('pages.about');
+    }
+
+    public function getFacilities()
+    {
+        $posts = Post::whereHas('categories', function ($query){
+            $query->where('name',$this->facilities);
+        })->orderBy('created_at','desc')->paginate(10);
+        return view('pages.facilities')->withPosts($posts);
+    }
+
+    public function getAdmissions()
+    {
+        $posts = Post::whereHas('categories', function ($query){
+            $query->where('name',$this->admissions);
+        })->orderBy('created_at','desc')->paginate(10);
+        return view('pages.admissions')->withPosts($posts);
     }
 
     public function getContact()

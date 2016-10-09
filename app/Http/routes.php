@@ -42,6 +42,8 @@ Route::post('password/reset', 'Auth\PasswordController@reset');
 Route::get('/', ['as' => 'home','uses'=>'PageController@getIndex']);
 Route::get('/calendar', ['as' => 'calendar','uses'=>'PageController@getCalendar']);
 Route::get('/news', ['as' => 'news.index','uses'=> 'PageController@getNews']);
+Route::get('/facilities', ['as' => 'facilities','uses'=> 'PageController@getFacilities']);
+Route::get('/admissions', ['as' => 'admissions','uses'=> 'PageController@getAdmissions']);
 Route::get('/events', ['as' => 'news.events','uses'=> 'PageController@getEvents']);
 Route::get('/awards', ['as' => 'news.awards','uses'=> 'PageController@getAwards']);
 Route::get('/about',['as' => 'about','uses'=>'PageController@getAbout']);

@@ -18,8 +18,10 @@
                 <li class="{{Request::is('/') ? "active":""}}"><a href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li class="{{Request::is('calendar') ? "active":""}}"><a href="{{route('calendar')}}">Calendar</a></li>
                 <li class="{{Request::is('news') ? "active":""}}"><a href="{{route('news.index')}}">News</a></li>
+                <li class="{{Request::is('facilities') ? "active":""}}"><a href="{{route('facilities')}}">Facilities</a></li>
+                <li class="{{Request::is('admissions') ? "active":""}}"><a href="{{route('admissions')}}">Admissions</a></li>
                 <li class="{{Request::is('about') ? "active":""}}"><a href="{{route('about')}}">About</a></li>
-                <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}">Contact</a></li>
+                <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(Auth::check())

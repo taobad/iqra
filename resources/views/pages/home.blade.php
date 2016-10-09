@@ -19,6 +19,7 @@
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
                 <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
             </ol>
 
             <!-- Wrapper for slides -->
@@ -37,6 +38,10 @@
 
                 <div class="item">
                     {!! Html::image('img/home_slider/iq_4.jpeg', 'iqra_img4') !!}
+                </div>
+
+                <div class="item">
+                    {!! Html::image('img/home_slider/iq_5.jpeg', 'iqra_img5') !!}
                 </div>
             </div>
 
