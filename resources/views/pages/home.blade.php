@@ -96,7 +96,7 @@
 
                                 <p class="list-group-item-text text-not-overflow">{{substr(strip_tags($event->body),0,70)}} {{strlen(strip_tags($event->body)) > 70 ? "...":""}}</p>
 
-                                <span style="">
+                                <span class="icon-date" style="">
                                   <i class="glyphicon glyphicon-calendar"></i>
                                   {{$event->eventdate}}
                                 </span>
