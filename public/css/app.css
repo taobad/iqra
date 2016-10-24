@@ -1,6 +1,6 @@
 /*Customize bootstap navbar*/
 .navbar{
-    background-color: #337ab7;
+    background-color: #4169e1;
 }
 
 .nav.navbar-nav li a{
@@ -9,13 +9,13 @@
 
 .navbar-default .navbar-nav > .active{
     color: #000;
-    background: #2e6da4;
+    background: #3258b7;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: #000;
-    background: #2e6da4;
+    background: #3258b7;
 }
 /*.. End..*/
 
@@ -23,7 +23,7 @@
 /*Customize bootstap navbar dropdown*/
 .navbar-default .navbar-nav .open .dropdown-menu>li>a,
 .navbar-default .navbar-nav .open .dropdown-menu {
-    background-color: #2e6da4;
+    background-color: #3258b7;
     color:#ffffff;
 }
 /*.. End..*/
@@ -35,7 +35,7 @@
 /*.. End..*/
 
 .panel-default > .panel-heading {
-    background-color: #2e6da4;
+    background-color: #4169e1;
 }
 
 .filter-cat{
@@ -44,8 +44,8 @@
 }
 
 .jumbo{
-    background-color: #2e6da4;
-    color: #CACECF;
+    background-color: #4169e1;
+    color: #FFFFFF;
 }
 
 .jumbo>img{
@@ -231,4 +231,8 @@
 
 .text-not-overflow{
     word-wrap: break-word;
+}
+
+.btn-primary{
+  background: #4169e1;
 }
