@@ -185,7 +185,7 @@ class PostController extends Controller
             $filePath = 'img/posts/'.$post->id.'/';
             File::cleanDirectory(public_path($filePath));
 
-            //recreate directory if deleted
+            //recreate directory if deleted or doesn't exist
             if(!File::exists(public_path($filePath))) {
                 // path does not exist
                 File::makeDirectory(public_path($filePath));
@@ -202,6 +202,12 @@ class PostController extends Controller
                 $img->name = $filename;
                 $post->images()->save($img);
             }
+        } else {
+            $post->images()->delete();
+            //empty folder before deleting
+            $filePath = 'img/posts/'.$post->id.'/';
+            File::cleanDirectory(public_path($filePath));
+            File::deleteDirectory(public_path($filePath));
         }
 
         Session::flash('success',' Blog post successfully edited!');
