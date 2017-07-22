@@ -117,7 +117,7 @@ class PageController extends Controller
         );
         Mail::send('emails.contact', $data, function($message) use ($data){
             $message->from($data['email']);
-            $message->to('badmustaofeeq@gmail.com');
+            $message->to('info@iqracollege.net');
             $message->subject($data['subject']);
         });
         Session::flash('success',' Email was sent successfully!');
