@@ -51,6 +51,7 @@ Route::get('/about',['as' => 'about','uses'=>'PageController@getAbout']);
 
 Route::get('/contact',['as' => 'contact.get','uses'=>'PageController@getContact']);
 Route::post('/contact',['as' => 'contact.post','uses'=>'PageController@postContact']);
+Route::get('/mail',['uses'=>'PageController@zohoMail']);
 
 Route::get('/news/{id}', ['as' => 'news.single','uses'=> 'PageController@getSingle']);
 Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController@getCategories']);

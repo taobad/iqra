@@ -138,6 +138,11 @@ class PageController extends Controller
     public function getSliderImages(){
         return view('pages.uploadSliderImg');
     }
+    
+    public function zohoMail(){
+        header("Location: https://mail.zoho.eu");
+        die();
+    }
 
 
     public function postSliderImages(Request $request)
