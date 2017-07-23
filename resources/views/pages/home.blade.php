@@ -7,8 +7,8 @@
         {!! Html::image('img/iqralogo.png', 'iqralogo', ['width' => 50,'height'=> 50]) !!}
 
         <div>
-          <h1> Welcome to Iqra College, ILorin. </h1>
-          <p>where we train students to be future leaders</p>
+            <h1 class="iqra-font"> Welcome to <b>IQRA College, Ilorin.</b></h1>
+            <p>where we train students to be future leaders</p>
         </div>
       </div>
 
