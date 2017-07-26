@@ -96,7 +96,7 @@
 
                                 <p class="list-group-item-text text-not-overflow">{{substr(strip_tags($event->body),0,70)}} {{strlen(strip_tags($event->body)) > 70 ? "...":""}}</p>
 
-                                <span class="<?php echo ($event->eventdate > time()) ? 'icon-future-date' : 'icon-past-date';  ?>">
+                                <span class="<?php echo (strtotime($event->eventdate) > time()) ? 'icon-future-date' : 'icon-past-date';  ?>">
                                   <i class="glyphicon glyphicon-calendar"></i>
                                   {{$event->eventdate}}
                                 </span>
