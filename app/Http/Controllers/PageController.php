@@ -42,7 +42,7 @@ class PageController extends Controller
 
         $events = Post::whereHas('categories', function ($query){
             $query->where('name',$this->events);
-        })->orderBy('created_at','desc')->take(5)->get();
+        })->orderBy('eventdate','desc')->take(5)->get();
 
         return view('pages.home')->withNewss($news)->withAwards($awards)->withEvents($events);
     }
