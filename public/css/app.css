@@ -242,6 +242,10 @@
   background: #4169e1;
 }
 
-.icon-date{
+.icon-future-date{
   color: #2169e1;
+}
+
+.icon-past-date{
+  color: #e1213e;
 }
