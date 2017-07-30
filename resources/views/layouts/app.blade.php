@@ -6,7 +6,7 @@
 
 <body>
 @include('layouts.partials._nav')
-<div class="container">
+<div class="container-fluid">
     @include('layouts.partials._messages')
     @yield('content')
     @include('layouts.partials._footer')
