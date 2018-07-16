@@ -9,9 +9,12 @@
                 <div class="panel-heading">Talk to us</div>
 
                 <div class="panel-body">
-                    <p><span class="glyphicon glyphicon-phone-alt"></span> +234-31227078</p>
-                    <p><span class="glyphicon glyphicon-earphone"></span> +234-8037060622</p>
+                    <p><span class="glyphicon glyphicon-phone-alt"></span> +234-8039447200</p>
+                    <p><span class="glyphicon glyphicon-earphone"></span> +234-8056646541</p>
                     <p><span class="glyphicon glyphicon-envelope"></span> info@iqracollege.net</p>
+                    <p><i class="fa fa-facebook"></i> IQRA College Ilorin</p>
+                    <p><i class="fa fa-instagram"></i> @iqracollegeilorin</p>
+                    <p><i class="fa fa-twitter"></i> @iqracollegeilr</p>
                 </div>
             </div>
           </div>
