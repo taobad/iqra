@@ -9,7 +9,7 @@
                 <div class="panel-heading">Talk to us</div>
 
                 <div class="panel-body">
-                    <p><span class="glyphicon glyphicon-earphone"></span> +234-8056646541</p>
+                    <p><span class="glyphicon glyphicon-earphone"></span> +234-8039447200, +234-8056646541</p>
                     <p><span class="fa fa-whatsapp"></span> +234-8039447200</p>
                     <p><span class="glyphicon glyphicon-envelope"></span> info@iqracollege.net</p>
                     <p><i class="fa fa-facebook"></i> IQRA College Ilorin</p>
@@ -24,10 +24,9 @@
                 <div class="panel-heading">Meet Us</div>
 
                 <div class="panel-body">
-                    <p><i>Near Pilgrims Camp,
-                          Transit Camp Layout,
-                          P.O. Box 5082,
-                          Ilorin, Kwara State.
+                    <p><i>IQRA College, Adebayo Ojuolape Street, Islamic Village, Near Pilgrims Camp,
+                          Transit Camp Layout, Ilorin
+                          P.O. Box 5082, Kwara State.
                     </i></p>
                 </div>
             </div>
