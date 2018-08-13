@@ -153,13 +153,14 @@ class PageController extends Controller
               'images.*' => 'image|mimes:jpg,jpeg,png'
           ]);
 
+          $position = $request->position;
           $images = $request->file('images');
           $imageEmpty = array_filter($images);
 
           if(!(empty($imageEmpty))){
               //$images = $request->file('images');
               $filePath = 'img/home_slider/';
-              File::cleanDirectory(public_path($filePath));
+//              File::cleanDirectory(public_path($filePath));
 
               //recreate directory if deleted
               if(!File::exists(public_path($filePath))) {
@@ -168,7 +169,7 @@ class PageController extends Controller
               }
               $i = 1;
               foreach ($images as $image){
-                  $filename = 'iq_'.$i.'.jpeg';
+                  $filename = ($position != 'ALL') ? 'iq_'.$position.'.jpeg' : 'iq_'.$i.'.jpeg';
 
                   if($image->getClientOriginalExtension() == 'jpeg' ){
                     Image::make($image)->resize(1200,400)->save(public_path($filePath.$filename));
@@ -179,7 +180,8 @@ class PageController extends Controller
               }
           }
 
-          Session::flash('success',' Homepage slide images successfully changed!');
+          $message = ($position != 'ALL') ? "Homepage slide image $position changed successfully!": "Homepage slide images changed successfully!";
+          Session::flash('success',"$message");
           return redirect()->route('home');
     }
 }
