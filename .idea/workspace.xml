@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/pages/contact.blade.php" line="9" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e51eeb2-8bf6-42d0-82c4-7bcdf003a614" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Iqra.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Iqra.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9e51eeb2-8bf6-42d0-82c4-7bcdf003a614" name="Default" comment="[Nav] - Grade Portal Links added.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" afterDir="false" />
     </list>
@@ -70,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="25" column="168" selection-start-line="25" selection-start-column="168" selection-end-line="25" selection-end-column="168" />
+            <state relative-caret-position="91">
+              <caret line="25" column="148" selection-start-line="25" selection-start-column="148" selection-end-line="25" selection-end-column="148" />
             </state>
           </provider>
         </entry>
@@ -115,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+            <state relative-caret-position="195">
+              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -297,7 +294,7 @@
       <workItem from="1468429775698" duration="495000" />
       <workItem from="1451609208597" duration="137000" />
       <workItem from="1531769272243" duration="2423000" />
-      <workItem from="1552436858550" duration="2098000" />
+      <workItem from="1552436858550" duration="3586000" />
     </task>
     <task id="LOCAL-00001" summary="social media contacts">
       <created>1531771140623</created>
@@ -306,11 +303,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531771140707</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[Nav] - Grade Portal Links added.">
+      <created>1552439175687</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552439175687</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81828000" />
+    <option name="totallyTimeSpent" value="83316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="27" width="1239" height="735" extended-state="0" />
@@ -318,14 +322,14 @@
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.19632414" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.19632414" />
       <window_info id="Gulp" order="3" side_tool="true" />
       <window_info id="Structure" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.32970452" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32305196" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32305196" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3281493" />
       <window_info anchor="bottom" id="Run" order="5" />
@@ -375,7 +379,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="social media contacts" />
-    <option name="LAST_COMMIT_MESSAGE" value="social media contacts" />
+    <MESSAGE value="[Nav] - Grade Portal Links added." />
+    <option name="LAST_COMMIT_MESSAGE" value="[Nav] - Grade Portal Links added." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/pages/news.blade.php">
@@ -608,8 +613,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        <state relative-caret-position="195">
+          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -629,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="25" column="168" selection-start-line="25" selection-start-column="168" selection-end-line="25" selection-end-column="168" />
+        <state relative-caret-position="91">
+          <caret line="25" column="148" selection-start-line="25" selection-start-column="148" selection-end-line="25" selection-end-column="148" />
         </state>
       </provider>
     </entry>
