@@ -23,7 +23,7 @@
                 <li class="{{Request::is('about') ? "active":""}}"><a href="{{route('about')}}">About</a></li>
                 <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}">Contact Us</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Grade Portal<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portals<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrajuniorcollege">JSS</a></li>
                         <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqraseniorcollege">SSS</a></li>
