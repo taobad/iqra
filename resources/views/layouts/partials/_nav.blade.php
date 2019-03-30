@@ -27,6 +27,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrajuniorcollege">JSS</a></li>
                         <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqraseniorcollege">SSS</a></li>
+                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrabasic">IQRA Basic</a></li>
                     </ul>
                 </li>
             </ul>
