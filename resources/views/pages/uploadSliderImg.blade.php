@@ -5,6 +5,8 @@
         <div class="col-md-6">
             <?php $slider_positions = [1,2,3,4,5]; ?>
             @foreach($slider_positions as $slider_position)
+<div class="panel panel-default">
+    <div class="panel-body">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         {!! Form::open(array('route' => 'uploadsliderimages.post', 'files'=>true, 'enctype'=>"multipart/form-data" )) !!}
@@ -17,6 +19,8 @@
                         {!! Form::close() !!}
                     </div>
                 </div>
+</div>
+</div>
             @endforeach
         </div>
         <div class="col-md-6">
