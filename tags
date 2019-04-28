@@ -1,0 +1,265 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AppServiceProvider	app/Providers/AppServiceProvider.php	/^class AppServiceProvider extends ServiceProvider$/;"	c
+AuthController	app/Http/Controllers/Auth/AuthController.php	/^class AuthController extends Controller$/;"	c
+AuthServiceProvider	app/Providers/AuthServiceProvider.php	/^class AuthServiceProvider extends ServiceProvider$/;"	c
+Authenticate	app/Http/Middleware/Authenticate.php	/^class Authenticate$/;"	c
+Category	app/Category.php	/^class Category extends Model$/;"	c
+CategoryController	app/Http/Controllers/CategoryController.php	/^class CategoryController extends Controller$/;"	c
+CategoryTableSeeder	database/seeds/CategoryTableSeeder.php	/^class CategoryTableSeeder extends Seeder$/;"	c
+CheckRole	app/Http/Middleware/CheckRole.php	/^class CheckRole$/;"	c
+Comment	app/Comment.php	/^class Comment extends Model$/;"	c
+CommentsController	app/Http/Controllers/CommentsController.php	/^class CommentsController extends Controller$/;"	c
+Controller	app/Http/Controllers/Controller.php	/^class Controller extends BaseController$/;"	c
+CreateCategoriesTable	database/migrations/2016_09_05_021520_create_categories_table.php	/^class CreateCategoriesTable extends Migration$/;"	c
+CreateCategoryPostTable	database/migrations/2016_09_05_022256_create_category_post_table.php	/^class CreateCategoryPostTable extends Migration$/;"	c
+CreateCommentsTable	database/migrations/2016_09_05_161554_create_comments_table.php	/^class CreateCommentsTable extends Migration$/;"	c
+CreateImagesTable	database/migrations/2016_09_05_032111_create_images_table.php	/^class CreateImagesTable extends Migration$/;"	c
+CreatePasswordResetsTable	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^class CreatePasswordResetsTable extends Migration$/;"	c
+CreatePostsTable	database/migrations/2016_09_05_022026_create_posts_table.php	/^class CreatePostsTable extends Migration$/;"	c
+CreateUsersTable	database/migrations/2014_10_12_000000_create_users_table.php	/^class CreateUsersTable extends Migration$/;"	c
+DatabaseSeeder	database/seeds/DatabaseSeeder.php	/^class DatabaseSeeder extends Seeder$/;"	c
+EncryptCookies	app/Http/Middleware/EncryptCookies.php	/^class EncryptCookies extends BaseEncrypter$/;"	c
+EntrustSetupTables	database/migrations/2016_09_07_145321_entrust_setup_tables.php	/^class EntrustSetupTables extends Migration$/;"	c
+Event	app/Events/Event.php	/^abstract class Event$/;"	c
+EventServiceProvider	app/Providers/EventServiceProvider.php	/^class EventServiceProvider extends ServiceProvider$/;"	c
+ExampleTest	tests/ExampleTest.php	/^class ExampleTest extends TestCase$/;"	c
+Handler	app/Exceptions/Handler.php	/^class Handler extends ExceptionHandler$/;"	c
+Image	app/Image.php	/^class Image extends Model$/;"	c
+Inspire	app/Console/Commands/Inspire.php	/^class Inspire extends Command$/;"	c
+Job	app/Jobs/Job.php	/^abstract class Job$/;"	c
+Kernel	app/Console/Kernel.php	/^class Kernel extends ConsoleKernel$/;"	c
+Kernel	app/Http/Kernel.php	/^class Kernel extends HttpKernel$/;"	c
+LARAVEL_START	bootstrap/autoload.php	/^define('LARAVEL_START', microtime(true));$/;"	d
+ManageUserController	app/Http/Controllers/ManageUserController.php	/^class ManageUserController extends Controller$/;"	c
+PageController	app/Http/Controllers/PageController.php	/^class PageController extends Controller$/;"	c
+PasswordController	app/Http/Controllers/Auth/PasswordController.php	/^class PasswordController extends Controller$/;"	c
+Permission	app/Permission.php	/^class Permission extends EntrustPermission$/;"	c
+Post	app/Post.php	/^class Post extends Model$/;"	c
+PostController	app/Http/Controllers/PostController.php	/^class PostController extends Controller$/;"	c
+RedirectIfAuthenticated	app/Http/Middleware/RedirectIfAuthenticated.php	/^class RedirectIfAuthenticated$/;"	c
+Request	app/Http/Requests/Request.php	/^abstract class Request extends FormRequest$/;"	c
+Role	app/Role.php	/^class Role extends EntrustRole$/;"	c
+RoleTableSeeder	database/seeds/RoleTableSeeder.php	/^class RoleTableSeeder extends Seeder$/;"	c
+RolesController	app/Http/Controllers/RolesController.php	/^class RolesController extends Controller$/;"	c
+RouteServiceProvider	app/Providers/RouteServiceProvider.php	/^class RouteServiceProvider extends ServiceProvider$/;"	c
+ScaleSlider	resources/views/blog/admin/posts/show.blade.php	/^            function ScaleSlider() {$/;"	f
+ScaleSlider	resources/views/users/admin/show.blade.php	/^            function ScaleSlider() {$/;"	f
+SeedsUsersRolesCategoriesTables	database/migrations/2016_09_05_021848_seeds_users_roles_categories_tables.php	/^class SeedsUsersRolesCategoriesTables extends Migration$/;"	c
+TestCase	tests/TestCase.php	/^abstract class TestCase extends Illuminate\\Foundation\\Testing\\TestCase$/;"	c
+User	app/User.php	/^class User extends Authenticatable$/;"	c
+UserTableSeeder	database/seeds/UserTableSeeder.php	/^class UserTableSeeder extends Seeder$/;"	c
+VerifyCsrfToken	app/Http/Middleware/VerifyCsrfToken.php	/^class VerifyCsrfToken extends BaseVerifier$/;"	c
+__construct	app/Http/Controllers/Auth/AuthController.php	/^    public function __construct()$/;"	f
+__construct	app/Http/Controllers/Auth/PasswordController.php	/^    public function __construct()$/;"	f
+__construct	app/Http/Controllers/CategoryController.php	/^    public function __construct()$/;"	f
+__construct	app/Http/Controllers/CommentsController.php	/^    public function __construct()$/;"	f
+__construct	app/Http/Controllers/ManageUserController.php	/^    public function __construct()$/;"	f
+__construct	app/Http/Controllers/PostController.php	/^    public function __construct()$/;"	f
+__construct	app/Http/Controllers/RolesController.php	/^    public function __construct()$/;"	f
+actions	app/Http/Middleware/CheckRole.php	/^        $actions = $request->route()->getAction();$/;"	v
+admin	database/seeds/UserTableSeeder.php	/^        $admin = new User();$/;"	v
+admissions	app/Http/Controllers/PageController.php	/^    protected $admissions = 'Admissions';$/;"	v
+app	bootstrap/app.php	/^$app = new Illuminate\\Foundation\\Application($/;"	v
+app	public/index.php	/^$app = require_once __DIR__.'\/..\/bootstrap\/app.php';$/;"	v
+app	tests/TestCase.php	/^        $app = require __DIR__.'\/..\/bootstrap\/app.php';$/;"	v
+awards	app/Http/Controllers/PageController.php	/^        $awards = Category::orderBy('categories.id','desc')->join('posts', 'categories.id', '=', 'posts.category_id')$/;"	v
+awards	app/Http/Controllers/PageController.php	/^        $awards = Post::whereHas('categories', function ($query){$/;"	v
+awards	app/Http/Controllers/PageController.php	/^    protected $awards = 'Awards';$/;"	v
+baseUrl	tests/TestCase.php	/^    protected $baseUrl = 'http:\/\/localhost';$/;"	v
+boot	app/Providers/AppServiceProvider.php	/^    public function boot()$/;"	f
+boot	app/Providers/AuthServiceProvider.php	/^    public function boot(GateContract $gate)$/;"	f
+boot	app/Providers/EventServiceProvider.php	/^    public function boot(DispatcherContract $events)$/;"	f
+boot	app/Providers/RouteServiceProvider.php	/^    public function boot(Router $router)$/;"	f
+categories	app/Http/Controllers/CategoryController.php	/^        $categories = Category::all();$/;"	v
+categories	app/Http/Controllers/PostController.php	/^        $categories = Category::all();$/;"	v
+categories	app/Post.php	/^    public function categories(){$/;"	f
+categories	database/migrations/2016_09_05_021848_seeds_users_roles_categories_tables.php	/^      $categories = array($/;"	v
+category	app/Http/Controllers/CategoryController.php	/^        $category = Category::find($id);$/;"	v
+category	app/Http/Controllers/CategoryController.php	/^        $category = new Category;$/;"	v
+category	app/Http/Controllers/PageController.php	/^        $category = Category::find($id);$/;"	v
+category	app/Http/Controllers/RolesController.php	/^        $category = new Category;$/;"	v
+category	database/seeds/CategoryTableSeeder.php	/^        $category = new Category();$/;"	v
+cats	app/Http/Controllers/PostController.php	/^        $cats = [];$/;"	v
+commands	app/Console/Kernel.php	/^    protected $commands = [$/;"	v
+comment	app/Http/Controllers/CommentsController.php	/^        $comment = Comment::find($id);$/;"	v
+comment	app/Http/Controllers/CommentsController.php	/^        $comment = new Comment();$/;"	v
+comments	app/Post.php	/^    public function comments(){$/;"	f
+comments	app/User.php	/^    public function comments(){$/;"	f
+compiledPath	bootstrap/autoload.php	/^$compiledPath = __DIR__.'\/cache\/compiled.php';$/;"	v
+create	app/Http/Controllers/Auth/AuthController.php	/^    protected function create(array $data)$/;"	f
+create	app/Http/Controllers/CategoryController.php	/^    public function create()$/;"	f
+create	app/Http/Controllers/CommentsController.php	/^    public function create()$/;"	f
+create	app/Http/Controllers/ManageUserController.php	/^    public function create()$/;"	f
+create	app/Http/Controllers/PostController.php	/^    public function create()$/;"	f
+create	app/Http/Controllers/RolesController.php	/^    public function create()$/;"	f
+createApplication	tests/TestCase.php	/^    public function createApplication()$/;"	f
+data	app/Http/Controllers/PageController.php	/^        $data = array($/;"	v
+delete	app/Http/Controllers/CommentsController.php	/^    public function delete($id)$/;"	f
+description	app/Console/Commands/Inspire.php	/^    protected $description = 'Display an inspiring quote';$/;"	v
+destroy	app/Http/Controllers/CategoryController.php	/^    public function destroy($id)$/;"	f
+destroy	app/Http/Controllers/CommentsController.php	/^    public function destroy($id)$/;"	f
+destroy	app/Http/Controllers/ManageUserController.php	/^    public function destroy($id)$/;"	f
+destroy	app/Http/Controllers/PostController.php	/^    public function destroy($id)$/;"	f
+destroy	app/Http/Controllers/RolesController.php	/^    public function destroy($id)$/;"	f
+dontReport	app/Exceptions/Handler.php	/^    protected $dontReport = [$/;"	v
+down	database/migrations/2014_10_12_000000_create_users_table.php	/^    public function down()$/;"	f
+down	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    public function down()$/;"	f
+down	database/migrations/2016_09_05_021520_create_categories_table.php	/^    public function down()$/;"	f
+down	database/migrations/2016_09_05_021848_seeds_users_roles_categories_tables.php	/^    public function down()$/;"	f
+down	database/migrations/2016_09_05_022026_create_posts_table.php	/^    public function down()$/;"	f
+down	database/migrations/2016_09_05_022256_create_category_post_table.php	/^    public function down()$/;"	f
+down	database/migrations/2016_09_05_032111_create_images_table.php	/^    public function down()$/;"	f
+down	database/migrations/2016_09_05_161554_create_comments_table.php	/^    public function down()$/;"	f
+down	database/migrations/2016_09_07_145321_entrust_setup_tables.php	/^    public function down()$/;"	f
+edit	app/Http/Controllers/CategoryController.php	/^    public function edit($id)$/;"	f
+edit	app/Http/Controllers/CommentsController.php	/^    public function edit($id)$/;"	f
+edit	app/Http/Controllers/ManageUserController.php	/^    public function edit($id)$/;"	f
+edit	app/Http/Controllers/PostController.php	/^    public function edit($id)$/;"	f
+edit	app/Http/Controllers/RolesController.php	/^    public function edit($id)$/;"	f
+events	app/Http/Controllers/PageController.php	/^        $events = Category::orderBy('categories.id','desc')->join('posts', 'categories.id', '=', 'posts.category_id')$/;"	v
+events	app/Http/Controllers/PageController.php	/^        $events = Post::whereHas('categories', function ($query){$/;"	v
+events	app/Http/Controllers/PageController.php	/^    protected $events = 'Events';$/;"	v
+except	app/Http/Middleware/EncryptCookies.php	/^    protected $except = [$/;"	v
+except	app/Http/Middleware/VerifyCsrfToken.php	/^    protected $except = [$/;"	v
+facilities	app/Http/Controllers/PageController.php	/^    protected $facilities = 'Facilities';$/;"	v
+filePath	app/Http/Controllers/PageController.php	/^              $filePath = 'img\/home_slider\/';$/;"	v
+filePath	app/Http/Controllers/PostController.php	/^            $filePath = 'img\/posts\/'.$post->id.'\/';$/;"	v
+filePath	app/Http/Controllers/PostController.php	/^        $filePath = 'img\/posts\/'.$post->id.'\/';$/;"	v
+filename	app/Http/Controllers/PageController.php	/^                  $filename = ($position != 'ALL') ? 'iq_'.$position.'.jpeg' : 'iq_'.$i.'.jpeg';$/;"	v
+filename	app/Http/Controllers/PostController.php	/^                $filename = $image->getClientOriginalName();$/;"	v
+filenamethumb	app/Http/Controllers/PostController.php	/^                $filenamethumb = 'thumbnail'.$filename;$/;"	v
+fillable	app/Comment.php	/^    protected $fillable = [$/;"	v
+fillable	app/User.php	/^    protected $fillable = [$/;"	v
+getAbout	app/Http/Controllers/PageController.php	/^    public function getAbout()$/;"	f
+getAdmissions	app/Http/Controllers/PageController.php	/^    public function getAdmissions()$/;"	f
+getAwards	app/Http/Controllers/PageController.php	/^    public function getAwards()$/;"	f
+getCalendar	app/Http/Controllers/PageController.php	/^    public function getCalendar()$/;"	f
+getCategories	app/Http/Controllers/PageController.php	/^    public function getCategories($id){$/;"	f
+getContact	app/Http/Controllers/PageController.php	/^    public function getContact()$/;"	f
+getEvents	app/Http/Controllers/PageController.php	/^    public function getEvents()$/;"	f
+getFacilities	app/Http/Controllers/PageController.php	/^    public function getFacilities()$/;"	f
+getIndex	app/Http/Controllers/PageController.php	/^    public function getIndex(){$/;"	f
+getNews	app/Http/Controllers/PageController.php	/^    public function getNews()$/;"	f
+getSingle	app/Http/Controllers/PageController.php	/^    public function getSingle($id){$/;"	f
+getSliderImages	app/Http/Controllers/PageController.php	/^    public function getSliderImages(){$/;"	f
+handle	app/Console/Commands/Inspire.php	/^    public function handle()$/;"	f
+handle	app/Http/Middleware/Authenticate.php	/^    public function handle($request, Closure $next, $guard = null)$/;"	f
+handle	app/Http/Middleware/CheckRole.php	/^    public function handle($request, Closure $next)$/;"	f
+handle	app/Http/Middleware/RedirectIfAuthenticated.php	/^    public function handle($request, Closure $next, $guard = null)$/;"	f
+hasAnyRole	app/User.php	/^    public function hasAnyRole($roles){$/;"	f
+hasRole	app/User.php	/^    public function hasRole($role){$/;"	f
+hidden	app/User.php	/^    protected $hidden = [$/;"	v
+i	app/Http/Controllers/PageController.php	/^              $i = 1;$/;"	v
+imageEmpty	app/Http/Controllers/PageController.php	/^          $imageEmpty = array_filter($images);$/;"	v
+imageEmpty	app/Http/Controllers/PostController.php	/^        $imageEmpty = array_filter($images);$/;"	v
+images	app/Http/Controllers/PageController.php	/^          $images = $request->file('images');$/;"	v
+images	app/Http/Controllers/PostController.php	/^        $images = $request->file('images');$/;"	v
+images	app/Post.php	/^    public function images(){$/;"	f
+img	app/Http/Controllers/PostController.php	/^                $img = new Img;$/;"	v
+index	app/Http/Controllers/CategoryController.php	/^    public function index()$/;"	f
+index	app/Http/Controllers/CommentsController.php	/^    public function index()$/;"	f
+index	app/Http/Controllers/ManageUserController.php	/^    public function index()$/;"	f
+index	app/Http/Controllers/PostController.php	/^    public function index()$/;"	f
+index	app/Http/Controllers/RolesController.php	/^    public function index()$/;"	f
+jpg	app/Http/Controllers/PageController.php	/^                    $jpg = (string) Image::make($image)->encode('jpeg',100)->resize(1200,400)->save(public_path($filePath.$filename));$/;"	v
+kernel	public/index.php	/^$kernel = $app->make(Illuminate\\Contracts\\Http\\Kernel::class);$/;"	v
+listen	app/Providers/EventServiceProvider.php	/^    protected $listen = [$/;"	v
+map	app/Providers/RouteServiceProvider.php	/^    public function map(Router $router)$/;"	f
+mapWebRoutes	app/Providers/RouteServiceProvider.php	/^    protected function mapWebRoutes(Router $router)$/;"	f
+message	app/Http/Controllers/PageController.php	/^          $message = ($position != 'ALL') ? "Homepage slide image $position changed successfully!": "Homepage slide images changed successfully!";$/;"	v
+middleware	app/Http/Kernel.php	/^    protected $middleware = [$/;"	v
+middlewareGroups	app/Http/Kernel.php	/^    protected $middlewareGroups = [$/;"	v
+namespace	app/Providers/RouteServiceProvider.php	/^    protected $namespace = 'App\\Http\\Controllers';$/;"	v
+news	app/Http/Controllers/PageController.php	/^        $news = Post::whereHas('categories', function ($query){$/;"	v
+news	app/Http/Controllers/PageController.php	/^    protected $news = 'News';$/;"	v
+policies	app/Providers/AuthServiceProvider.php	/^    protected $policies = [$/;"	v
+position	app/Http/Controllers/PageController.php	/^          $position = $request->position;$/;"	v
+post	app/Comment.php	/^    public function post(){$/;"	f
+post	app/Http/Controllers/CommentsController.php	/^        $post = Post::find($post_id);$/;"	v
+post	app/Http/Controllers/PageController.php	/^        $post = Post::find($id);$/;"	v
+post	app/Http/Controllers/PostController.php	/^        $post =  Post::find($id);$/;"	v
+post	app/Http/Controllers/PostController.php	/^        $post = Post::find($id);$/;"	v
+post	app/Http/Controllers/PostController.php	/^        $post = new Post;$/;"	v
+post	app/Image.php	/^    public function post(){$/;"	f
+postContact	app/Http/Controllers/PageController.php	/^    public function postContact(Request $request)$/;"	f
+postSliderImages	app/Http/Controllers/PageController.php	/^    public function postSliderImages(Request $request)$/;"	f
+post_id	app/Http/Controllers/CommentsController.php	/^        $post_id = $comment->post->id;$/;"	v
+posts	app/Category.php	/^    public function posts(){$/;"	f
+posts	app/Http/Controllers/CategoryController.php	/^        $posts = $category->posts()->orderBy('created_at','desc')->paginate(10);$/;"	v
+posts	app/Http/Controllers/PageController.php	/^        $posts  = Post::whereHas('categories', function ($query){$/;"	v
+posts	app/Http/Controllers/PageController.php	/^        $posts = $category->posts()->orderBy('created_at','desc')->paginate(10);$/;"	v
+posts	app/Http/Controllers/PageController.php	/^        $posts = Post::whereHas('categories', function ($query){$/;"	v
+posts	app/Http/Controllers/PostController.php	/^        $posts = Post::orderBy('id','desc')->paginate(10);$/;"	v
+posts	app/Http/Controllers/PostController.php	/^        $posts = Post::where('title','LIKE','%'.$request->title.'%')->paginate(10);$/;"	v
+redirectTo	app/Http/Controllers/Auth/AuthController.php	/^    protected $redirectTo = '\/';$/;"	v
+register	app/Providers/AppServiceProvider.php	/^    public function register()$/;"	f
+render	app/Exceptions/Handler.php	/^    public function render($request, Exception $e)$/;"	f
+report	app/Exceptions/Handler.php	/^    public function report(Exception $e)$/;"	f
+request	public/index.php	/^    $request = Illuminate\\Http\\Request::capture()$/;"	v
+response	public/index.php	/^$response = $kernel->handle($/;"	v
+role	app/Http/Controllers/RolesController.php	/^        $role = Role::find($id);$/;"	v
+role_admin	database/seeds/UserTableSeeder.php	/^        $role_admin = Role::where('name','admin')->first();$/;"	v
+role_user	database/seeds/RoleTableSeeder.php	/^      $role_user = new Role();$/;"	v
+role_user	database/seeds/UserTableSeeder.php	/^        $role_user = Role::where('name','user')->first();$/;"	v
+role_user1	database/seeds/RoleTableSeeder.php	/^      $role_user1 = new Role();$/;"	v
+role_user2	database/seeds/RoleTableSeeder.php	/^      $role_user2 = new Role();$/;"	v
+role_user3	database/seeds/RoleTableSeeder.php	/^      $role_user3 = new Role();$/;"	v
+role_user4	database/seeds/RoleTableSeeder.php	/^      $role_user4 = new Role();$/;"	v
+role_user5	database/seeds/RoleTableSeeder.php	/^      $role_user5 = new Role();$/;"	v
+roles	app/Http/Controllers/ManageUserController.php	/^        $roles = Role::all();$/;"	v
+roles	app/Http/Controllers/RolesController.php	/^        $roles = Role::all();$/;"	v
+roles	app/Http/Middleware/CheckRole.php	/^        $roles = isset($actions['roles']) ? $actions['roles'] : null;$/;"	v
+roles	database/migrations/2016_09_05_021848_seeds_users_roles_categories_tables.php	/^      $roles = array($/;"	v
+rols	app/Http/Controllers/ManageUserController.php	/^        $rols = [];$/;"	v
+routeMiddleware	app/Http/Kernel.php	/^    protected $routeMiddleware = [$/;"	v
+run	database/seeds/CategoryTableSeeder.php	/^    public function run()$/;"	f
+run	database/seeds/DatabaseSeeder.php	/^    public function run()$/;"	f
+run	database/seeds/RoleTableSeeder.php	/^    public function run()$/;"	f
+run	database/seeds/UserTableSeeder.php	/^    public function run()$/;"	f
+schedule	app/Console/Kernel.php	/^    protected function schedule(Schedule $schedule)$/;"	f
+search	app/Http/Controllers/ManageUserController.php	/^    public function search(Request $request)$/;"	f
+search	app/Http/Controllers/PostController.php	/^    public function search(Request $request)$/;"	f
+show	app/Http/Controllers/CategoryController.php	/^    public function show($id)$/;"	f
+show	app/Http/Controllers/CommentsController.php	/^    public function show($id)$/;"	f
+show	app/Http/Controllers/ManageUserController.php	/^    public function show($id)$/;"	f
+show	app/Http/Controllers/PostController.php	/^    public function show($id)$/;"	f
+show	app/Http/Controllers/RolesController.php	/^    public function show($id)$/;"	f
+signature	app/Console/Commands/Inspire.php	/^    protected $signature = 'inspire';$/;"	v
+store	app/Http/Controllers/CategoryController.php	/^    public function store(Request $request)$/;"	f
+store	app/Http/Controllers/CommentsController.php	/^    public function store(Request $request, $post_id)$/;"	f
+store	app/Http/Controllers/ManageUserController.php	/^    public function store(Request $request)$/;"	f
+store	app/Http/Controllers/PostController.php	/^    public function store(Request $request)$/;"	f
+store	app/Http/Controllers/RolesController.php	/^    public function store(Request $request)$/;"	f
+table	app/Category.php	/^    protected $table = 'categories';$/;"	v
+testBasicExample	tests/ExampleTest.php	/^    public function testBasicExample()$/;"	f
+up	database/migrations/2014_10_12_000000_create_users_table.php	/^    public function up()$/;"	f
+up	database/migrations/2014_10_12_100000_create_password_resets_table.php	/^    public function up()$/;"	f
+up	database/migrations/2016_09_05_021520_create_categories_table.php	/^    public function up()$/;"	f
+up	database/migrations/2016_09_05_021848_seeds_users_roles_categories_tables.php	/^    public function up()$/;"	f
+up	database/migrations/2016_09_05_022026_create_posts_table.php	/^    public function up()$/;"	f
+up	database/migrations/2016_09_05_022256_create_category_post_table.php	/^    public function up()$/;"	f
+up	database/migrations/2016_09_05_032111_create_images_table.php	/^    public function up()$/;"	f
+up	database/migrations/2016_09_05_161554_create_comments_table.php	/^    public function up()$/;"	f
+up	database/migrations/2016_09_07_145321_entrust_setup_tables.php	/^    public function up()$/;"	f
+update	app/Http/Controllers/CategoryController.php	/^    public function update(Request $request, $id)$/;"	f
+update	app/Http/Controllers/CommentsController.php	/^    public function update(Request $request, $id)$/;"	f
+update	app/Http/Controllers/ManageUserController.php	/^    public function update(Request $request, $id)$/;"	f
+update	app/Http/Controllers/PostController.php	/^    public function update(Request $request, $id)$/;"	f
+update	app/Http/Controllers/RolesController.php	/^    public function update(Request $request, $id)$/;"	f
+uri	server.php	/^$uri = urldecode($/;"	v
+user	app/Comment.php	/^    public function user(){$/;"	f
+user	app/Http/Controllers/ManageUserController.php	/^        $user =  User::find($id);$/;"	v
+user	app/Http/Controllers/ManageUserController.php	/^        $user = User::find($id);$/;"	v
+user	app/Http/Controllers/ManageUserController.php	/^        $user = new User();$/;"	v
+userUpdate	app/Http/Controllers/ManageUserController.php	/^    public function userUpdate(Request $request, $id)$/;"	f
+users	app/Http/Controllers/ManageUserController.php	/^        $users = User::orderBy('id','desc')->paginate(10);$/;"	v
+users	app/Http/Controllers/ManageUserController.php	/^        $users = User::where(DB::raw("concat(firstname, ' ', lastname)") , 'like' , '%'.$request->name.'%')$/;"	v
+users	app/Http/Controllers/RolesController.php	/^        $users = User::whereHas('roles', function ($query) use ($role){$/;"	v
+users	database/migrations/2016_09_05_021848_seeds_users_roles_categories_tables.php	/^      $users = array($/;"	v
+validator	app/Http/Controllers/Auth/AuthController.php	/^    protected function validator(array $data)$/;"	f
+zohoMail	app/Http/Controllers/PageController.php	/^    public function zohoMail(){$/;"	f

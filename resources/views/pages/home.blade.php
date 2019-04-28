@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="jumbotron jumbo">
-                    {!! Html::image('img/iqralogo.png', 'iqralogo', ['width' => 50,'height'=> 50]) !!}
+                    {!! Html::image('img/iqralogo.jpg', 'iqralogo', ['width' => 50,'height'=> 50]) !!}
 
                     <div>
                         <h1 class="iqra-font"> Welcome to <b>IQRA College, Ilorin.</b></h1>
