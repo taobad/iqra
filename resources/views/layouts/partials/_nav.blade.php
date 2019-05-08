@@ -38,7 +38,7 @@
                     <ul class="dropdown-menu">
                     @role('admin')
                         <li><a href="{{route('posts.index')}}">Posts</a></li>
-                        <li><a href="{{route('uploadsliderimages.get')}}">Upload Slider Images</a></li>
+                        <li><a href="{{route('uploadsliderimages.get')}}">Uploads</a></li>
                         <li><a href="{{route('users.index')}}">Manage Users</a></li>
                     @endrole
                         <li><a href="{{url('logout')}}">Logout</a></li>

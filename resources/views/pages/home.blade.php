@@ -15,16 +15,23 @@
             width: 100%;
             height: 100%;
         }
+        .jumbotron {
+            background-size: cover;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
+                <div class="row">
+                    {!! Html::image('img/iqralogo.jpg', 'iqralogo', [ 'style' => "width:20%; display: block; margin-left: auto; margin-right: auto;"]) !!}
+                </div>
                 <div class="jumbotron jumbo">
-                    {!! Html::image('img/iqralogo.jpg', 'iqralogo', ['width' => 50,'height'=> 50]) !!}
-
                     <div>
-                        <h1 class="iqra-font"> Welcome to <b>IQRA College, Ilorin.</b></h1>
-                        <p>where we train students to be future leaders</p>
+                        <h1 class="iqra-font"> Welcome to <br><b>IQRA College, Ilorin.</b></h1>
+                        <p><b>Preparing Students for Global Competitiveness</b></p>
                     </div>
                 </div>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
