@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\DynamicSystemVariables;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
@@ -22,15 +23,6 @@ class PageController extends Controller
     protected $admissions = 'Admissions';
 
     public function getIndex(){
-        /*$news = Category::orderBy('categories.id','desc')->join('posts', 'categories.id', '=', 'posts.category_id')
-            ->where('name','=','News')->take(5)->get();
-        $awards = Category::orderBy('categories.id','desc')->join('posts', 'categories.id', '=', 'posts.category_id')
-            ->where('name','=','Awards')->take(5)->get();
-        $events = Category::orderBy('categories.id','desc')->join('posts', 'categories.id', '=', 'posts.category_id')
-            ->where('name','=','Events')->take(5)->get();*/
-
-        //$newss = Category::where('name','News')->first();
-        //$news = Category::find($newss->id)->posts()->orderBy('created_at','desc')->take(5)->get();
 
         $news = Post::whereHas('categories', function ($query){
             $query->where('name',$this->news);
@@ -44,7 +36,10 @@ class PageController extends Controller
             $query->where('name',$this->events);
         })->orderBy('eventdate','desc')->take(5)->get();
 
-        return view('pages.home')->withNewss($news)->withAwards($awards)->withEvents($events);
+        $systemVariable = DynamicSystemVariables::where('key', 'home_video_path')->first();
+        $home_vid_path = ($systemVariable) ? $systemVariable->value : '';
+
+        return view('pages.home')->withNewss($news)->withAwards($awards)->withEvents($events)->with('home_vid_path', $home_vid_path);
     }
 
     public function getCalendar()
@@ -144,6 +139,24 @@ class PageController extends Controller
         die();
     }
 
+    public function setHomeVideoPath(Request $request)
+    {
+        $this->validate($request,[
+          'home_video_path' => 'required|regex:/_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS',
+          ]);
+
+        $systemVariable = DynamicSystemVariables::where('key', 'home_video_path')->first();
+        if(!$systemVariable) {
+            $systemVariable = new DynamicSystemVariables();
+        }
+
+        $systemVariable->key = 'home_video_path';
+        $systemVariable->value = $request->home_video_path;
+        $systemVariable->save();
+
+        Session::flash('success',"$request->home_video_path was set as the homepage video successfully");
+        return redirect()->route('uploads.get');
+    }
 
     public function postSliderImages(Request $request)
     {

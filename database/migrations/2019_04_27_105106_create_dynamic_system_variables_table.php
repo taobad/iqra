@@ -17,7 +17,6 @@ class CreateDynamicSystemVariablesTable extends Migration
               $table->increments('id');
               $table->string('key');
               $table->string('value');
-              $table->timestamps();
           });
     }
 

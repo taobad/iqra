@@ -79,9 +79,12 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     Route::resource('comments','CommentsController', ['except'=> ['store']]);
     Route::get('comments/{post_id}/delete',['as' => 'comments.delete','uses'=>'CommentsController@delete']);
 
-    //uploadsliderimages
-    Route::get('/uploadsliderimages',['as' => 'uploadsliderimages.get','uses'=>'PageController@getSliderImages']);
-    Route::post('/uploadsliderimages',['as' => 'uploadsliderimages.post','uses'=>'PageController@postSliderImages']);
+    //uploads
+    Route::get('/uploads',['as' => 'uploads.get','uses'=>'PageController@getSliderImages']);
+    Route::post('/uploads',['as' => 'uploads.post','uses'=>'PageController@postSliderImages']);
+
+    //homevideopath
+    Route::post('/homevideopath',['as' => 'homevideopath.post','uses'=>'PageController@setHomeVideoPath']);
 
     //manage users
     Route::resource('users','ManageUserController');

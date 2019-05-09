@@ -112,7 +112,7 @@
                         <div class="panel-heading"><h4></h4></div>
                         <div class="panel-body videoWrapper">
                             <iframe width="420" height="315"
-                                    src="https://www.youtube.com/embed/Rvhb9aoyeZs?autoplay=1">
+                                    src="{{ $home_vid_path }}">
                             </iframe>
                         </div>
                     </div>
