@@ -94,7 +94,7 @@ class PostController extends Controller
             }
             foreach ($images as $image){
                 $filename = $image->getClientOriginalName();
-                $filenamethumb = 'thumbnail'.$filename;
+                $filenamethumb = 'thumbnail'. $filename;
 
                 $img = new Img;
                 $img->name = $filename;
@@ -192,6 +192,7 @@ class PostController extends Controller
             }
 
             foreach ($images as $image){
+
                 $filename = $image->getClientOriginalName();
                 $filenamethumb = 'thumbnail'.$filename;
 
