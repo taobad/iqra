@@ -7,6 +7,7 @@ use App\Post;
 use App\Image as Img;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Session;
 use Purifier;
@@ -196,8 +197,11 @@ class PostController extends Controller
                 $filename = $image->getClientOriginalName();
                 $filenamethumb = 'thumbnail'.$filename;
 
-                Image::make($image)->save(public_path($filePath.$filename));
-                Image::make($image)->resize(60,40)->save(public_path($filePath.$filenamethumb));
+                $image = Image::make($image)->save(public_path($filePath.$filename))->stream('jpg');
+                Storage::put(public_path($filePath.$filename), $image);
+
+                $image_thumb = Image::make($image)->resize(60,40)->stream('jpg');
+                Storage::put(public_path($filePath.$filenamethumb), $image_thumb);
 
                 $img = new Img;
                 $img->name = $filename;
