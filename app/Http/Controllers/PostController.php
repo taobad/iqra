@@ -93,18 +93,8 @@ class PostController extends Controller
                 // path does not exist
                 File::makeDirectory(public_path($filePath));
             }
-            foreach ($images as $image){
-                $filename = $image->getClientOriginalName();
-                $filenamethumb = 'thumbnail'. $filename;
 
-                $img = new Img;
-                $img->name = $filename;
-                $post->images()->save($img);
-
-                Image::make($image)->save(public_path($filePath.$filename));
-                Image::make($image)->resize(60,40)->save(public_path($filePath.$filenamethumb));
-
-            }
+            $this->saveImages($images, $post, $filePath);
         }
 
         Session::flash('success',' Blog post successfully saved!');
@@ -192,21 +182,8 @@ class PostController extends Controller
                 File::makeDirectory(public_path($filePath));
             }
 
-            foreach ($images as $image){
+            $this->saveImages($images, $post, $filePath);
 
-                $filename = $image->getClientOriginalName();
-                $filenamethumb = 'thumbnail'.$filename;
-
-                $image = Image::make($image)->save(public_path($filePath.$filename))->stream('jpg');
-                Storage::put(public_path($filePath.$filename), $image);
-
-                $image_thumb = Image::make($image)->resize(60,40)->stream('jpg');
-                Storage::put(public_path($filePath.$filenamethumb), $image_thumb);
-
-                $img = new Img;
-                $img->name = $filename;
-                $post->images()->save($img);
-            }
         } else {
             $post->images()->delete();
             //empty folder before deleting
@@ -217,6 +194,24 @@ class PostController extends Controller
 
         Session::flash('success',' Blog post successfully edited!');
         return redirect()->route('posts.show',$post->id);
+    }
+
+    protected function saveImages(array $images, $post, $filePath) {
+        foreach ($images as $image){
+
+            $filename = $image->getClientOriginalName();
+            $filenamethumb = 'thumbnail'.$filename;
+
+            $image = Image::make($image)->save(public_path($filePath.$filename))->stream('jpg');
+            Storage::put(public_path($filePath.$filename), $image);
+
+            $image_thumb = Image::make($image)->resize(60,40)->stream('jpg');
+            Storage::put(public_path($filePath.$filenamethumb), $image_thumb);
+
+            $img = new Img;
+            $img->name = $filename;
+            $post->images()->save($img);
+        }
     }
 
     /**
