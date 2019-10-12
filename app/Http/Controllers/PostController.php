@@ -94,7 +94,18 @@ class PostController extends Controller
                 File::makeDirectory(public_path($filePath));
             }
 
-            $this->saveImages($images, $post, $filePath);
+            foreach ($images as $image){
+                $filename = $image->getClientOriginalName();
+                $filenamethumb = 'thumbnail'. $filename;
+
+                $img = new Img;
+                $img->name = $filename;
+                $post->images()->save($img);
+
+                Image::make($image)->save(public_path($filePath.$filename));
+                Image::make($image)->resize(60,40)->save(public_path($filePath.$filenamethumb));
+
+            }
         }
 
         Session::flash('success',' Blog post successfully saved!');
@@ -168,12 +179,12 @@ class PostController extends Controller
         $images = $request->file('images');
         $imageEmpty = array_filter($images);
 
+        $filePath = 'img/posts/'.$post->id.'/';
         if(!(empty($imageEmpty))){
 
             //delete file names from database
             $post->images()->delete();
             //empty folder before updating
-            $filePath = 'img/posts/'.$post->id.'/';
             File::cleanDirectory(public_path($filePath));
 
             //recreate directory if deleted or doesn't exist
@@ -182,12 +193,22 @@ class PostController extends Controller
                 File::makeDirectory(public_path($filePath));
             }
 
-            $this->saveImages($images, $post, $filePath);
+            foreach ($images as $image){
+                $filename = $image->getClientOriginalName();
+                $filenamethumb = 'thumbnail'. $filename;
+
+                $img = new Img;
+                $img->name = $filename;
+                $post->images()->save($img);
+
+                Image::make($image)->save(public_path($filePath.$filename));
+                Image::make($image)->resize(60,40)->save(public_path($filePath.$filenamethumb));
+
+            }
 
         } else {
             $post->images()->delete();
             //empty folder before deleting
-            $filePath = 'img/posts/'.$post->id.'/';
             File::cleanDirectory(public_path($filePath));
             File::deleteDirectory(public_path($filePath));
         }
@@ -202,11 +223,11 @@ class PostController extends Controller
             $filename = $image->getClientOriginalName();
             $filenamethumb = 'thumbnail'.$filename;
 
-            $image = Image::make($image)->stream();
-            Storage::put(public_path($filePath.$filename), $image);
+            $image = Image::make($image);
+            Storage::put(public_path($filePath.$filename), $image->encode());
 
-            $image_thumb = Image::make($image)->resize(60,40)->stream();
-            Storage::put(public_path($filePath.$filenamethumb), $image_thumb);
+            $image_thumb = Image::make($image)->resize(60,40);
+            Storage::put(public_path($filePath.$filenamethumb), $image_thumb->encode(), 'public');
 
             $img = new Img;
             $img->name = $filename;
