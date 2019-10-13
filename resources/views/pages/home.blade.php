@@ -46,25 +46,11 @@
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            {!! Html::image('img/home_slider/iq_1.jpeg', 'iqra_img1') !!}
-                        </div>
-
-                        <div class="item">
-                            {!! Html::image('img/home_slider/iq_2.jpeg', 'iqra_img2') !!}
-                        </div>
-
-                        <div class="item">
-                            {!! Html::image('img/home_slider/iq_3.jpeg', 'iqra_img3') !!}
-                        </div>
-
-                        <div class="item">
-                            {!! Html::image('img/home_slider/iq_4.jpeg', 'iqra_img4') !!}
-                        </div>
-
-                        <div class="item">
-                            {!! Html::image('img/home_slider/iq_5.jpeg', 'iqra_img5') !!}
-                        </div>
+                        @for ($i = 1; $i <= 5; $i++)
+                            <div class="item <?php echo ($i == 1) ? 'active' : '' ?>">
+                                {!! Html::image("img/home_slider/iq_$i.jpeg", "iqra_img$i") !!}
+                            </div>
+                        @endfor
                     </div>
 
                     <!-- Left and right controls -->
@@ -168,4 +154,13 @@
             </div>
         </div>
     </div>
+    <script>
+        ( document ).ready(function() {
+            var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+            if (isMobile) {
+                //Conditional script here
+            }
+        });
+    </script>
 @endsection

@@ -3,17 +3,19 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <div class="nav-toggle">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            </div>
             <a class="navbar-brand" style="color: #fff;" href="{{route('home')}}"> <p class="iqra-font">IQRA COLLEGE, ILORIN</p> </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="main-nav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{{Request::is('/') ? "active":""}}"><a href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li class="{{Request::is('calendar') ? "active":""}}"><a href="{{route('calendar')}}">Calendar</a></li>
@@ -49,5 +51,46 @@
                 @endif
             </ul>
         </div><!-- /.navbar-collapse -->
+        <div class="mobile-nav">
+            <ul class="nav nav-tabs">
+                <li class="{{Request::is('/') ? "active":""}}"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                <li class="{{Request::is('calendar') ? "active":""}}"><a href="{{route('calendar')}}">Calendar</a></li>
+                <li class="{{Request::is('news') ? "active":""}}"><a href="{{route('news.index')}}">News</a></li>
+                <li class="{{Request::is('facilities') ? "active":""}}"><a href="{{route('facilities')}}">Facilities</a></li>
+                <li class="{{Request::is('admissions') ? "active":""}}"><a href="{{route('admissions')}}">Admissions</a></li>
+                <li class="{{Request::is('about') ? "active":""}}"><a href="{{route('about')}}">About</a></li>
+                <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}">Contact Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portals<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrajuniorcollege">JSS</a></li>
+                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqraseniorcollege">SSS</a></li>
+                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrabasic">IQRA Basic</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div><!-- /.container-fluid -->
 </nav>
+@section('scripts')
+    <script type="text/javascript">
+        var toggleNavMode = function() {
+            var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+            if (isMobile) {
+                $('.mobile-nav').show();
+                $('.main-nav, .nav-toggle').hide();
+            } else {
+                $('.mobile-nav').hide();
+                $('.main-nav, .nav-toggle').show();
+            }
+        };
+
+        $( document ).ready(function() {
+           toggleNavMode();
+        });
+        $(window).resize(function() {
+            toggleNavMode();
+        }).resize()
+    </script>
+@endsection
