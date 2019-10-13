@@ -1,3 +1,10 @@
+.logo-block {
+    height: 90px;
+}
+.logo-block > a > p {
+    color: white;
+}
+
 /*Customize bootstap navbar*/
 .navbar{
     background-color: #02075d;
@@ -31,14 +38,13 @@ nav a:hover{
 }
 /*.. End..*/
 
-
 /*Customize bootstap navbar dropdown*/
+.navbar-brand>p,
 .navbar-default .navbar-nav .open .dropdown-menu>li>a,
 .navbar-default .navbar-nav .open .dropdown-menu,
 .nav-tabs .open .dropdown-menu>li>a,
 .nav-tabs .open .dropdown-menu {
-    background-color: #0c1d6c;
-    color:#ffffff;
+    color:#0c1d6c;
 }
 /*.. End..*/
 

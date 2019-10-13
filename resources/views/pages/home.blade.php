@@ -25,15 +25,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
-                <div class="row">
-                    {!! Html::image('img/iqralogo.jpg', 'iqralogo', [ 'style' => "width:20%; display: block; margin-left: auto; margin-right: auto;"]) !!}
-                </div>
-                <div class="jumbotron jumbo">
-                    <div>
-                        <h1 class="iqra-font"> Welcome to <br><b>IQRA College, Ilorin.</b></h1>
-                        <p><b>Preparing Students for Global Competitiveness</b></p>
-                    </div>
-                </div>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
