@@ -14,9 +14,11 @@
                     </button>
                 </div>
                 <div class="logo-block">
-                    <a class="navbar-brand" href="{{route('home')}}"> <p class="iqra-font">IQRA COLLEGE, ILORIN
-                    {!! Html::image('img/iqralogo.jpg', 'iqralogo', [ 'style' => "width:70px;height:70px;margin-right:15px;float:left;"]) !!}
-                    </p> </a>
+                    {!! Html::image('img/iqralogo.jpg', 'iqralogo', [ 'style' => "width:60px;height:60px;margin:5px;float:left;"]) !!}
+                    <a class="navbar-brand" href="{{route('home')}}">
+                        <p class="iqra-font"><span class="title"> IQRA COLLEGE, ILORIN</span><br>
+                            <span class="subtitle"> Preparing Students for Global Competitiveness </span>
+                        </p></a>
                 </div>
             </div>
 

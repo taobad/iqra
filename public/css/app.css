@@ -5,6 +5,28 @@
     color: white;
 }
 
+@media only screen and (max-width: 760px) {
+    .subtitle {
+        font: italic 9px arial, sans-serif !important;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .subtitle {
+        font: italic 5px arial, sans-serif !important;
+    }
+    .title {
+        font-size: 11px;
+    }
+}
+
+.subtitle {
+    font: italic 12px arial, sans-serif;
+}
+
+.title {
+    font-weight: bold;
+}
 /*Customize bootstap navbar*/
 .navbar{
     background-color: #02075d;
