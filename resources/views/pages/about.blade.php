@@ -18,10 +18,7 @@
                   <div class="panel-heading">Vision</div>
 
                   <div class="panel-body">
-                      <ul>
-                          <li><p><i>Morality is emphasized in all activities to enable students build integrity from tender ages.</i></p></li>
-                          <li><p><i>Morality is emphasized in all activities to enable students build integrity from tender ages.</i></p></li>
-                      </ul>
+                      <p><i>To be a leading world class institution</i></p>
                   </div>
               </div>
           </div>
