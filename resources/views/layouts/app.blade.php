@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     @include('layouts.partials._head')
-    <meta name="google-site-verification" content="2EzqOAe0MbUDJtIrTIHjyI_J1fnGTpg6bWbBS0mkWWw">
+    <meta name="google-site-verification" content="GSQGqilUs-AbA-Gm_fFmugoZOiUy3aNd5cYKJX9UZY4">
 </head>
 
 <body>
