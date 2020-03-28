@@ -132,8 +132,14 @@ class ManageUserController extends Controller
     {
         $user =  User::find($id);
         $this->validate($request,[
-          'roles' => 'required',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'roles' => 'required',
         ]);
+
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->save();
 
         if(isset($request->roles)) {
             $user->roles()->sync($request->roles, true);
@@ -141,7 +147,7 @@ class ManageUserController extends Controller
             $user->roles()->sync(array());
         }
 
-        Session::flash('success',' user roles updated!');
+        Session::flash('success',' User Details Updated!');
         return redirect()->route('users.show',$user->id);
     }
 

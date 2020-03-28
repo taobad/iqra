@@ -19,16 +19,21 @@
         <div class="col-md-5">
             <div class="form-group">
                 {{Form::label('firstname','Firstname:')}}
-                {{Form::text('firstname',null,['class' => 'form-control input-lg', 'disabled'=> ''])}}
+                {{Form::text('firstname',null,['class' => 'form-control input-lg'])}}
             </div>
 
             <div class="form-group">
                 {{Form::label('lastname','Lastname:')}}
-                {{Form::text('lastname',null,['class' => 'form-control input-lg' ,'disabled'=> ''])}}
+                {{Form::text('lastname',null,['class' => 'form-control input-lg'])}}
             </div>
 
             <div class="form-group">
-                {{Form::label('roles','Roles:')}}
+                {{Form::label('email','email:')}}
+                {{Form::text('email',null,['class' => 'form-control input-lg' ,'disabled'=> ''])}}
+            </div>
+
+            <div class="form-group">
+                {{Form::label('roles','Groups:')}}
                 {{Form::select('roles[]',$roles,null,['class' => 'form-control select2-multi','multiple'=>'multiple'])}}
             </div>
 

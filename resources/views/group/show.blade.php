@@ -1,27 +1,21 @@
 @extends('layouts.app')
 
-@section('title','|View User')
+@section('title','|View Group')
 
 @section('content')
     <div class="row">
         <div class="col-md-8">
           <hr>
           <div class="comment">
-            <div class="author-info">
-              <img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($user->email))) . "?d=mm"}}" class="profilePicture">
               <div>
-                  <h1>{{$user->lastname}}&nbsp{{$user->firstname}}</h1>
+                  <p><b>Name: </b>{{$group->name}}</p>
               </div>
-            </div>
-
-            @foreach($user->roles as $role)
-              <div class="comment-content">
-                <span class="label label-default filter-cat">
-                  <a style="color: inherit" href="{{route('roles.show',$role->id)}}">
-                      {{$role->name}}</a> </span>
+              <div>
+                  <p><b>Display Name: </b>{{$group->display_name}}</p>
               </div>
-            @endforeach
-
+              <div>
+                  <p><b>Description:</b> {{$group->description}}</p>
+              </div>
           </div>
           <div class="col-md-12">
                 <hr>
@@ -33,11 +27,11 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Are you sure you want to remove this user?</h4>
+                        <h4 class="modal-title">Are you sure you want to remove this group?</h4>
                       </div>
                       <div class="modal-body">
                       <!--<p><input type="text" name="search" id="searchtext" class="form-control"><br></p>-->
-                      {!! Form::open(array('route' => ['users.destroy',$user->id],'method'=>'DELETE')) !!}
+                      {!! Form::open(array('route' => ['group.destroy',$group->id],'method'=>'DELETE')) !!}
                       </div>
                       <div class="modal-footer">
                           {{Form::submit('Delete',['class'=>  "btn btn-danger app-button" ])}}
@@ -55,14 +49,14 @@
             <div class="well">
                 <div class="row">
                   <div class="col-md-12 app-button">
-                      {!! Html::linkRoute('users.edit','Edit User details',[$user->id],['class'=>'btn btn-primary btn-block','style' => 'padding: 10px 0px;']) !!}
+                      {!! Html::linkRoute('group.edit','Edit Group details',[$group->id],['class'=>'btn btn-primary btn-block','style' => 'padding: 10px 0px;']) !!}
                   </div>
-                  <div class="col-md-12 app-button">
-                      <button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">Delete User</button>
-                  </div>
+                  {{--<div class="col-md-12 app-button">--}}
+                      {{--<button type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#myModal">Delete Group</button>--}}
+                  {{--</div>--}}
                     <hr>
                     <div class="col-md-12 app-button">
-                        {!! Html::linkRoute('users.index','<<See All Users',[],['class'=>'btn btn-default bt-h1-spacing btn-block']) !!}
+                        {!! Html::linkRoute('group.index','<<See All Groups',[],['class'=>'btn btn-default bt-h1-spacing btn-block']) !!}
                     </div>
                 </div>
             </div>

@@ -91,6 +91,10 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     Route::post('searchusers',['as' => 'users.search','uses'=>'ManageUserController@search']);
     Route::post('updateprofile',['as' => 'users.userUpdate','uses'=>'ManageUserController@search']);
 
+    //manage users
+    Route::resource('group','GroupController');
+    Route::post('searchgroups',['as' => 'group.search','uses'=>'GroupController@search']);
+
     //list of users with a certain role
     Route::get('roles/{role_id}',['as' => 'roles.show','uses'=>'RolesController@show']);
 });

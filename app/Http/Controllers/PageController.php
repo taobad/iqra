@@ -175,11 +175,6 @@ class PageController extends Controller
               $filePath = 'img/home_slider/';
 //              File::cleanDirectory(public_path($filePath));
 
-              //recreate directory if deleted
-              if(!File::exists(public_path($filePath))) {
-                  // path does not exist
-                  File::makeDirectory(public_path($filePath));
-              }
               $i = 1;
               foreach ($images as $image){
                   $filename = ($position != 'ALL') ? 'iq_'.$position.'.jpeg' : 'iq_'.$i.'.jpeg';

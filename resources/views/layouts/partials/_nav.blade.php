@@ -48,6 +48,7 @@
                     <ul class="dropdown-menu">
                     @role('admin')
                         <li><a href="{{route('posts.index')}}">Posts</a></li>
+                        <li><a href="{{route('group.index')}}">Groups</a></li>
                         <li><a href="{{route('uploads.get')}}">Uploads</a></li>
                         <li><a href="{{route('users.index')}}">Manage Users</a></li>
                     @endrole

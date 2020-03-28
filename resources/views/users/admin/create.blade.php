@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
-                    <label for="roles" class="col-md-4 control-label">Roles</label>
+                    <label for="roles" class="col-md-4 control-label">Groups</label>
 
                     <div class="col-md-6">
                       <select class="form-control select2-multi" name="roles[]" multiple="multiple">
