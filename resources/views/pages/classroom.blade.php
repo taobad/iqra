@@ -10,12 +10,14 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4></h4></div>
-                <div class="panel-body videoWrapper">
-                    <iframe width="400" height="315"
-                            src="https://www.youtube.com/embed/qf6Ch3hUfQY">
-                    </iframe>
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h4></h4></div>
+                    <div class="panel-body videoWrapper">
+                        <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/qf6Ch3hUfQY">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
