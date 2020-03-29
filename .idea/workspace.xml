@@ -4,16 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/pages/contact.blade.php" line="9" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e51eeb2-8bf6-42d0-82c4-7bcdf003a614" name="Default" comment="Virual">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ResourceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ResourceGroupAccess.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/classroom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+    <list default="true" id="9e51eeb2-8bf6-42d0-82c4-7bcdf003a614" name="Default" comment="Virual Classroom Page Added">
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" afterDir="false" />
     </list>
     <ignored path="Iqra.iws" />
@@ -75,8 +66,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="37" column="26" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="37" selection-end-column="26" />
+            <state relative-caret-position="260">
+              <caret line="77" column="165" selection-start-line="77" selection-start-column="165" selection-end-line="77" selection-end-column="165" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -309,7 +309,15 @@
               <item name="iqra" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iqra" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iqra" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -397,7 +405,7 @@
       <workItem from="1585122160723" duration="3018000" />
       <workItem from="1585401313020" duration="6445000" />
       <workItem from="1585414458416" duration="9627000" />
-      <workItem from="1585490665769" duration="1408000" />
+      <workItem from="1585490665769" duration="3028000" />
     </task>
     <task id="LOCAL-00001" summary="social media contacts">
       <created>1531771140623</created>
@@ -504,11 +512,18 @@
       <option name="project" value="LOCAL" />
       <updated>1585415350732</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Virual Classroom Page Added">
+      <created>1585492086197</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585492086197</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172936000" />
+    <option name="totallyTimeSpent" value="174556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1239" height="775" extended-state="6" />
@@ -521,7 +536,7 @@
       <window_info id="Structure" order="4" weight="0.2623225" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.3292683" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.30335367" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.30335367" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3277439" />
       <window_info anchor="bottom" id="Run" order="5" />
@@ -564,7 +579,8 @@
     <MESSAGE value="About layout changed" />
     <MESSAGE value="google site verification" />
     <MESSAGE value="Create, Update, Edit Group Feature Added&#10;User Can be assigned a created Group" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create, Update, Edit Group Feature Added&#10;User Can be assigned a created Group" />
+    <MESSAGE value="Virual Classroom Page Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Virual Classroom Page Added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -701,13 +717,6 @@
           <folding>
             <element signature="e#7#136#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -911,10 +920,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="37" column="26" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="37" selection-end-column="26" />
+        <state relative-caret-position="260">
+          <caret line="77" column="165" selection-start-line="77" selection-start-column="165" selection-end-line="77" selection-end-column="165" />
         </state>
       </provider>
     </entry>

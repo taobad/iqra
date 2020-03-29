@@ -75,7 +75,7 @@
                 <li class="{{Request::is('admissions') ? "active":""}}"><a href="{{route('admissions')}}"><span title="Admissions"><i class="glyphicon glyphicon-folder-open"></i></span></a></li>
                 <li class="{{Request::is('news') ? "active":""}}"><a href="{{route('news.index')}}"><span title="News"><i class="glyphicon glyphicon-list-alt"></i></span></a></li>
                 <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}"><span title="Contact Us"><i class="glyphicon glyphicon-phone-alt"></i></span></a></li>
-                <li class="{{Request::is('classroom') ? "active":""}}"><a href="{{route('classroom')}}"><span title="Contact Us"><i class="glyphicon glyphicon-expand"></i></span>Virtual Classroom</a></li>
+                <li class="{{Request::is('classroom') ? "active":""}}"><a href="{{route('classroom')}}"><span title="Contact Us"><i class="glyphicon glyphicon-expand"></i></span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span title="Portals"><i class="glyphicon glyphicon-chevron-down"></i></span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
