@@ -31,6 +31,15 @@ class User extends Authenticatable
         return $this->hasMany('App\Comment');
     }
 
+    public function groups(){
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /*public function roles(){
       return $this->belongsToMany('App\Role');
     }

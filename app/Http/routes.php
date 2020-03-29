@@ -47,6 +47,7 @@ Route::get('/admissions', ['as' => 'admissions','uses'=> 'PageController@getAdmi
 Route::get('/events', ['as' => 'news.events','uses'=> 'PageController@getEvents']);
 Route::get('/awards', ['as' => 'news.awards','uses'=> 'PageController@getAwards']);
 Route::get('/about',['as' => 'about','uses'=>'PageController@getAbout']);
+Route::get('/classroom',['as' => 'classroom','uses'=>'PageController@getVirtualClassroomPosts']);
 //Route::get('/about',['uses' => 'PageController@getAbout','middleware'=>['auth','roles'], 'roles' => ['Admin']]);
 
 Route::get('/contact',['as' => 'contact.get','uses'=>'PageController@getContact']);
@@ -91,9 +92,13 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     Route::post('searchusers',['as' => 'users.search','uses'=>'ManageUserController@search']);
     Route::post('updateprofile',['as' => 'users.userUpdate','uses'=>'ManageUserController@search']);
 
-    //manage users
+    //manage groups
     Route::resource('group','GroupController');
     Route::post('searchgroups',['as' => 'group.search','uses'=>'GroupController@search']);
+
+    //manage resource
+    Route::resource('resource','ResourceController');
+    Route::post('searchresources',['as' => 'resource.search','uses'=>'ResourceController@search']);
 
     //list of users with a certain role
     Route::get('roles/{role_id}',['as' => 'roles.show','uses'=>'RolesController@show']);

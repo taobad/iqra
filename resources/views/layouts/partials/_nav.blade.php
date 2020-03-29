@@ -32,6 +32,10 @@
                 <li class="{{Request::is('news') ? "active":""}}"><a href="{{route('news.index')}}">News</a></li>
                 <li class="{{Request::is('admissions') ? "active":""}}"><a href="{{route('admissions')}}">Admissions</a></li>
                 <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}">Contact Us</a></li>
+                <li class="{{Request::is('classroom') ? "active":""}}"><a href="{{route('classroom')}}">Virtual Classroom</a></li>
+                {{--@if(Auth::check())--}}
+                {{--<li class="{{Request::is('resource') ? "active":""}}"><a href="{{route('resource.index')}}">Resources</a></li>--}}
+                {{--@endif--}}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portals<span class="caret"></span></a>
                     <ul class="dropdown-menu">

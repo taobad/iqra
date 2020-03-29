@@ -21,6 +21,7 @@ class PageController extends Controller
     protected $events = 'Events';
     protected $facilities = 'Facilities';
     protected $admissions = 'Admissions';
+    const CLASSROOM = 'CLASSROOM';
 
     public function getIndex(){
 
@@ -61,6 +62,14 @@ class PageController extends Controller
             $query->where('name',$this->events);
         })->orderBy('created_at','desc')->paginate(10);
         return view('blog.public.index')->withPosts($posts);
+    }
+
+    public function getVirtualClassroomPosts()
+    {
+        $posts  = Post::whereHas('categories', function ($query){
+            $query->where('name',self::CLASSROOM);
+        })->orderBy('created_at','desc')->paginate(10);
+        return view('pages.classroom')->withPosts($posts);
     }
 
     public function getAwards()
