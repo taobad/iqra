@@ -5,7 +5,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h1>Virtual Classroom News</h1>
+            <h1>Virtual Classroom</h1>
         </div>
     </div>
     <div class="row">
