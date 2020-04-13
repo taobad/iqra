@@ -212,18 +212,20 @@ class ApplicationController extends Controller
 
         // Save Applicant's image
         $image = $request->file('image');
-        $filePath = 'img/admission/' . $application->application_ref . '/';
-        if (!File::exists(public_path($filePath))) {
-            // path does not exist
-            File::makeDirectory(public_path($filePath), 0777, true);
+        if($image) {
+            $filePath = 'img/admission/' . $application->application_ref . '/';
+            if (!File::exists(public_path($filePath))) {
+                // path does not exist
+                File::makeDirectory(public_path($filePath), 0777, true);
+            }
+            $filename = $image->getClientOriginalName();
+            $filenamethumb = 'thumbnail' . $filename;
+            Image::make($image)->save(public_path($filePath . $filename));
+            Image::make($image)->resize(60, 40)->save(public_path($filePath . $filenamethumb));
+
+
+            $application->image_name = $filename;
         }
-        $filename = $image->getClientOriginalName();
-        $filenamethumb = 'thumbnail' . $filename;
-        Image::make($image)->save(public_path($filePath . $filename));
-        Image::make($image)->resize(60, 40)->save(public_path($filePath . $filenamethumb));
-
-
-        $application->image_name = $filename;
         $application->status = '2';
         $application->save();
 
@@ -281,7 +283,7 @@ class ApplicationController extends Controller
             'gender' => 'required',
             'date_of_birth' => 'required',
             'place_of_birth' => 'required',
-            'image' => 'required|image',
+//            'image' => 'required|image',
             'father_first_name' => 'required',
             'father_last_name' => 'required',
             'father_contact_address' => 'required',
