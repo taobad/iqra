@@ -58,7 +58,8 @@ Route::get('/news/{id}', ['as' => 'news.single','uses'=> 'PageController@getSing
 Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController@getCategories']);
     //->where('slug', '[\w\d\-\_]+');
 //Route::get('/blog', ['as' => 'blog.index','uses'=> 'BlogController@getIndex']);
-
+Route::get('prospectapplication',['as' => 'application.prospect','uses'=>'ApplicationController@prospect']);
+Route::post('retrieveapplication',['as' => 'application.retrieve','uses'=>'ApplicationController@retrieve']);
 
 Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsController@store','middleware'=>['role:user|admin']]);
 
@@ -95,8 +96,6 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     //manage application
     Route::resource('application','ApplicationController');
     Route::post('searchapplications',['as' => 'application.search','uses'=>'ApplicationController@search']);
-    Route::get('prospectapplication',['as' => 'application.prospect','uses'=>'ApplicationController@prospect']);
-    Route::post('retrieveapplication',['as' => 'application.retrieve','uses'=>'ApplicationController@retrieve']);
 
     //list of users with a certain role
     Route::get('roles/{role_id}',['as' => 'roles.show','uses'=>'RolesController@show']);
