@@ -33,9 +33,6 @@
                 <li class="{{Request::is('admissions') ? "active":""}}"><a href="{{route('admissions')}}">Admissions</a></li>
                 <li class="{{Request::is('contact') ? "active":""}}"><a href="{{route('contact.get')}}">Contact Us</a></li>
                 <li class="{{Request::is('classroom') ? "active":""}}"><a href="{{route('classroom')}}">Virtual Classroom</a></li>
-                {{--@if(Auth::check())--}}
-                {{--<li class="{{Request::is('resource') ? "active":""}}"><a href="{{route('resource.index')}}">Resources</a></li>--}}
-                {{--@endif--}}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portals<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -52,9 +49,9 @@
                     <ul class="dropdown-menu">
                     @role('admin')
                         <li><a href="{{route('posts.index')}}">Posts</a></li>
-                        <li><a href="{{route('group.index')}}">Groups</a></li>
                         <li><a href="{{route('uploads.get')}}">Uploads</a></li>
                         <li><a href="{{route('users.index')}}">Manage Users</a></li>
+                        <li><a href="{{route('application.index')}}">Applications</a></li>
                     @endrole
                         <li><a href="{{url('logout')}}">Logout</a></li>
                     </ul>
@@ -92,7 +89,7 @@
 </div>
 @section('scripts')
     <script type="text/javascript">
-        var toggleNavMode = function() {
+        $(window).on('resize ready', function(){
             var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
             if (isMobile) {
@@ -102,13 +99,7 @@
                 $('.mobile-nav').hide();
                 $('.main-nav, .nav-toggle').show();
             }
-        };
+        }).trigger('ready');
 
-        $( document ).ready(function() {
-           toggleNavMode();
-        });
-        $(window).resize(function() {
-            toggleNavMode();
-        }).resize()
     </script>
 @endsection

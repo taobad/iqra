@@ -5,7 +5,11 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h1>Latest Admissions News</h1>
+            <h1>Latest Admissions News
+                <span class="pull-right">
+                    <a href="{{route('application.prospect')}}" class="btn btn-primary btn-lg btn-block">Start/Retrieve an Application</a>
+                </span>
+            </h1>
         </div>
     </div>
     <div class="row">
