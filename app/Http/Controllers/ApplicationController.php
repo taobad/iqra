@@ -86,7 +86,7 @@ class ApplicationController extends Controller
             $application->save();
 
             Session::flash('success', ' Application Created Successfully');
-            return redirect()->route('application.show', $application->id);
+            return redirect()->route('application.edit', $application->id);
         }
     }
 
@@ -117,10 +117,33 @@ class ApplicationController extends Controller
             'application_ref' => 'required|max:255',
         ]);
 
+        $app = Application::where('application_ref', '=', $request->application_ref )->first();
+        if (!$app) {
+            Session::flash('danger', ' Invalid Receipt No.');
+            return redirect()->route('application.prospect');
+        } else {
+            $route = $app->status == '2' ? "viewapplication/$app->id" : "editapplication/$app->id";
+            return redirect($route);
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function postRetrieve(Request $request)
+    {
+        //
+        $this->validate($request, [
+            'application_ref' => 'required|max:255',
+        ]);
+
         $application = Application::where('application_ref', '=', $request->application_ref )->first();
         if (!$application) {
             Session::flash('danger', ' Invalid Receipt No.');
-            return redirect()->route('application.create');
+            return redirect()->route('application.prospect');
         } else {
             $view = $application->status == '2' ? 'applications.show' : 'applications.edit';
             $data = $this->getApplicationEnums();
@@ -193,7 +216,6 @@ class ApplicationController extends Controller
         if (!File::exists(public_path($filePath))) {
             // path does not exist
             File::makeDirectory(public_path($filePath), 0777, true);
-
         }
         $filename = $image->getClientOriginalName();
         $filenamethumb = 'thumbnail' . $filename;
@@ -206,7 +228,7 @@ class ApplicationController extends Controller
         $application->save();
 
         Session::flash('success', ' Application Submitted  Successfully!');
-        return view('applications.edit')->withApplication($application);
+        return back()->withApplication($application);
     }
 
     public function userUpdate(Request $request, $id)

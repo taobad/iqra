@@ -60,6 +60,8 @@ Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController
 //Route::get('/blog', ['as' => 'blog.index','uses'=> 'BlogController@getIndex']);
 Route::get('prospectapplication',['as' => 'application.prospect','uses'=>'ApplicationController@prospect']);
 Route::post('retrieveapplication',['as' => 'application.retrieve','uses'=>'ApplicationController@retrieve']);
+Route::get('/viewapplication/{id}',['as' => 'application.viewapp','uses'=>'ApplicationController@show']);
+Route::get('/editapplication/{id}',['as' => 'application.editapp','uses'=>'ApplicationController@edit']);
 
 Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsController@store','middleware'=>['role:user|admin']]);
 
