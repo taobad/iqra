@@ -19,8 +19,8 @@
             {!! Form::open(array('route' => 'application.store')) !!}
 
                 <div class="form-group">
-                    {{Form::label('application_ref','Receipt No:')}}
-                    {{Form::text('application_ref', null, ['class'=>'form-control'])}}
+                    {{Form::label('teller_number','Teller No:')}}
+                    {{Form::text('teller_number', null, ['class'=>'form-control'])}}
                 </div>
 
                 {{Form::submit('Create Application',['class' => 'btn btn-primary btn-lg btn-block','style' => 'margin-top:20px'])}}

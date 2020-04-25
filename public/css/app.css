@@ -1,3 +1,8 @@
+:root {
+    --main-bg-color: #02075d;
+    --main-app-font-color: #FFFFFF;
+}
+
 .logo-block {
     height: 90px;
 }
@@ -29,7 +34,7 @@
 }
 /*Customize bootstap navbar*/
 .navbar{
-    background-color: #02075d;
+    background-color: var(--main-bg-color);
 }
 
 .nav.navbar-nav li a, .nav.nav-tabs li a{
@@ -37,14 +42,14 @@
 }
 
 .navbar-default .navbar-nav > .active, .nav-tabs > .active{
-    color: #fff;
+    color: var(--main-app-font-color);
     background: #0c1d6c;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus,
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-    color: #fff;
+    color: var(--main-app-font-color);
     background: #0c1d6c;
 }
 
@@ -77,8 +82,8 @@ nav a:hover{
 /*.. End..*/
 
 .panel-default > .panel-heading {
-    background-color: #02075d;
-    color:#ffffff;
+    background-color: var(--main-bg-color);
+    color:var(--main-app-font-color);
 }
 
 .filter-cat{
@@ -87,8 +92,8 @@ nav a:hover{
 }
 
 .jumbo{
-    background-color: #02075d;
-    color: #FFFFFF;
+    background-color: var(--main-bg-color);
+    color: var(--main-app-font-color);
 }
 
 .jumbo>img{
@@ -196,7 +201,7 @@ nav a:hover{
 
 #homepage-news{
   word-wrap: break-word;
-  background: #fff;
+  background: var(--main-app-font-color);
   padding-left:10px;
   border-radius:15px
 }
@@ -281,7 +286,7 @@ nav a:hover{
 }
 
 .btn-primary{
-  background: #02075d;
+  background: var(--main-bg-color);
 }
 
 .icon-future-date{
@@ -290,4 +295,14 @@ nav a:hover{
 
 .icon-past-date{
   color: #e1213e;
+}
+
+.landing-info{
+    background-color: var(--main-bg-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#enrollment_details_block > div.landing-info > p {
+    color: var(--main-app-font-color);
 }

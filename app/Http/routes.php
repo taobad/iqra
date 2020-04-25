@@ -58,6 +58,10 @@ Route::get('/news/{id}', ['as' => 'news.single','uses'=> 'PageController@getSing
 Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController@getCategories']);
     //->where('slug', '[\w\d\-\_]+');
 //Route::get('/blog', ['as' => 'blog.index','uses'=> 'BlogController@getIndex']);
+
+//manage application
+Route::resource('application','ApplicationController');
+Route::post('searchapplications',['as' => 'application.search','uses'=>'ApplicationController@search']);
 Route::get('prospectapplication',['as' => 'application.prospect','uses'=>'ApplicationController@prospect']);
 Route::post('retrieveapplication',['as' => 'application.retrieve','uses'=>'ApplicationController@retrieve']);
 Route::get('/viewapplication/{id}',['as' => 'application.viewapp','uses'=>'ApplicationController@show']);
@@ -94,10 +98,6 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     Route::resource('users','ManageUserController');
     Route::post('searchusers',['as' => 'users.search','uses'=>'ManageUserController@search']);
     Route::post('updateprofile',['as' => 'users.userUpdate','uses'=>'ManageUserController@search']);
-
-    //manage application
-    Route::resource('application','ApplicationController');
-    Route::post('searchapplications',['as' => 'application.search','uses'=>'ApplicationController@search']);
 
     //list of users with a certain role
     Route::get('roles/{role_id}',['as' => 'roles.show','uses'=>'RolesController@show']);

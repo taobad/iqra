@@ -69,19 +69,20 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $this->validate($request, [
-            'application_ref' => 'required|max:255',
+            'teller_number' => 'required|max:255',
         ]);
 
-        $app_exist = Application::where('application_ref', '=', $request->application_ref )->first();
+        $application_ref = $random = time() . rand(10*45, 100*98);
+        $app_exist = Application::where('teller_number', '=', $request->teller_number )->first();
         if ($app_exist) {
-            Session::flash('danger', ' Application Ref already Exists');
+            Session::flash('danger', ' Teller No already Exists in our system');
             return redirect()->route('application.create');
         } else {
 
             $application = new Application();
-            $application->application_ref = $request->application_ref;
+            $application->application_ref = $application_ref;
+            $application->teller_number = $request->teller_number;
             $application->status = '1';
             $application->save();
 
@@ -142,7 +143,7 @@ class ApplicationController extends Controller
 
         $application = Application::where('application_ref', '=', $request->application_ref )->first();
         if (!$application) {
-            Session::flash('danger', ' Invalid Receipt No.');
+            Session::flash('danger', ' Invalid Reference No.');
             return redirect()->route('application.prospect');
         } else {
             $view = $application->status == '2' ? 'applications.show' : 'applications.edit';
@@ -161,8 +162,10 @@ class ApplicationController extends Controller
     {
         $application = Application::find($id);
 
+        $view = $application->status == '2' ? 'applications.show' : 'applications.edit';
+
         $data = $this->getApplicationEnums();
-        return view('applications.edit')->withApplication($application)->with($data);
+        return view($view)->withApplication($application)->with($data);
     }
 
     private function getApplicationEnums()
@@ -182,6 +185,8 @@ class ApplicationController extends Controller
                 'abuja' => 'Abuja',
                 'ilorin' => 'Ilorin',
                 'lagos' => 'Lagos',
+                'port-harcourt' => 'Port-Harcourt',
+                'warri' => 'Warri'
             ],
             'enrollment_types' => [
                 '' => '-- Select Enrollment Type --',
@@ -233,27 +238,6 @@ class ApplicationController extends Controller
         return back()->withApplication($application);
     }
 
-    public function userUpdate(Request $request, $id)
-    {
-        $user = User::find($id);
-        $this->validate($request, [
-            'firstname' => 'required|max:255',
-            'lastname' => 'required|max:255',
-        ]);
-
-        $user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        $user->save();
-
-        foreach ($request->roles as $role) {
-            # code...
-            $user->attachRole($role);
-        }
-
-        Session::flash('success', ' Profile updated!');
-        return redirect()->route('users.show', $user->id);
-    }
-
 
     /**
      * Remove the specified resource from storage.
@@ -283,20 +267,21 @@ class ApplicationController extends Controller
             'gender' => 'required',
             'date_of_birth' => 'required',
             'place_of_birth' => 'required',
-//            'image' => 'required|image',
+            'image' => 'required|image',
             'father_first_name' => 'required',
             'father_last_name' => 'required',
             'father_contact_address' => 'required',
-            'father_home_phone' => 'required',
+            'father_contact_number_1' => 'required',
             'mother_first_name' => 'required',
             'mother_last_name' => 'required',
             'mother_contact_address' => 'required',
-            'mother_home_phone' => 'required',
+            'mother_contact_number_1' => 'required',
             'sponsor_first_name' => 'required',
             'sponsor_last_name' => 'required',
             'sponsor_contact_address' => 'required',
-            'sponsor_home_phone' => 'required',
+            'sponsor_contact_number_1' => 'required',
             'sponsor_relationship' => 'required',
+
         ]);
     }
 
@@ -309,6 +294,7 @@ class ApplicationController extends Controller
         $application->first_name = $request->first_name;
         $application->last_name = $request->last_name;
         $application->other_names = $request->other_names;
+        $application->email = $request->email;
         $application->gender = $request->gender;
         $application->date_of_birth = $request->date_of_birth;
         $application->place_of_birth = $request->place_of_birth;
@@ -319,26 +305,29 @@ class ApplicationController extends Controller
         $application->father_first_name = $request->father_first_name;
         $application->father_last_name = $request->father_last_name;
         $application->father_other_names = $request->father_other_names;
+        $application->father_email = $request->father_email;
         $application->father_contact_address = $request->father_contact_address;
-        $application->father_postal_code = $request->father_postal_code;
-        $application->father_mobile_phone = $request->father_mobile_phone;
-        $application->father_home_phone = $request->father_home_phone;
+        $application->father_postal_address = $request->father_postal_address;
+        $application->father_contact_number_1 = $request->father_contact_number_1;
+        $application->father_contact_number_2 = $request->father_contact_number_2;
 
         $application->mother_first_name = $request->mother_first_name;
         $application->mother_last_name = $request->mother_last_name;
         $application->mother_other_names = $request->mother_other_names;
+        $application->mother_email = $request->mother_email;
         $application->mother_contact_address = $request->mother_contact_address;
-        $application->mother_postal_code = $request->mother_postal_code;
-        $application->mother_mobile_phone = $request->mother_mobile_phone;
-        $application->mother_home_phone = $request->mother_home_phone;
+        $application->mother_postal_address = $request->mother_postal_address;
+        $application->mother_contact_number_1 = $request->mother_contact_number_1;
+        $application->mother_contact_number_2 = $request->mother_contact_number_2;
 
         $application->sponsor_first_name = $request->sponsor_first_name;
         $application->sponsor_last_name = $request->sponsor_last_name;
         $application->sponsor_other_names = $request->sponsor_other_names;
+        $application->sponsor_email = $request->sponsor_email;
         $application->sponsor_contact_address = $request->sponsor_contact_address;
-        $application->sponsor_postal_code = $request->sponsor_postal_code;
-        $application->sponsor_mobile_phone = $request->sponsor_mobile_phone;
-        $application->sponsor_home_phone = $request->sponsor_home_phone;
+        $application->sponsor_postal_address = $request->sponsor_postal_address;
+        $application->sponsor_contact_number_1 = $request->sponsor_contact_number_1;
+        $application->sponsor_contact_number_2 = $request->sponsor_contact_number_2;
         $application->sponsor_relationship = $request->sponsor_relationship;
     }
 }

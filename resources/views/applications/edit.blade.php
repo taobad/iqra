@@ -17,6 +17,14 @@
 
     <!-- Tab content -->
     <div id="enrollment_details_block" class="tabcontent">
+        <div class="landing-info">
+            <p>
+                Thank you for choosing to apply for admission into IQRA College and for choosing this online platform.
+                Please, complete this form carefully.
+            </p>
+        </div>
+
+        <br>
 
         <div class="form-group">
             {{Form::label('application_ref','Application Ref:')}}
@@ -58,6 +66,16 @@
         <div class="form-group">
             {{Form::label('gender','Gender:')}}
             {{Form::select('gender', $genders, null,['class' => 'form-control'])}}
+        </div>
+
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            {{Form::label('email','Email:')}}
+            {{Form::text('email',null,['class' => 'form-control input-md'])}}
+            @if ($errors->has('email'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
         </div>
 
         <div class="form-group">
@@ -108,23 +126,28 @@
         </div>
 
         <div class="form-group">
-            {{Form::label('father_mobile_phone','Mobile Phone:')}}
-            {{Form::text('father_mobile_phone',null,['class' => 'form-control input-md'])}}
+            {{Form::label('father_email','Email:')}}
+            {{Form::text('father_email',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('father_home_phone','Home Phone:')}}
-            {{Form::text('father_home_phone',null,['class' => 'form-control input-md'])}}
+            {{Form::label('father_contact_number_1','Contact Number 1:')}}
+            {{Form::text('father_contact_number_1',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('father_postal_code','Postal Code:')}}
-            {{Form::text('father_postal_code',null,['class' => 'form-control input-md'])}}
+            {{Form::label('father_contact_number_2','Contact Number 2:')}}
+            {{Form::text('father_contact_number_2',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
             {{Form::label('father_contact_address','Contact Address')}}
             {{Form::textarea('father_contact_address',null,['class' => 'form-control'])}}
+        </div>
+
+        <div class="form-group">
+            {{Form::label('father_postal_address','Postal Address:')}}
+            {{Form::textarea('father_postal_address',null,['class' => 'form-control input-md'])}}
         </div>
     </div>
 
@@ -145,27 +168,45 @@
         </div>
 
         <div class="form-group">
-            {{Form::label('mother_mobile_phone','Mobile Phone:')}}
-            {{Form::text('mother_mobile_phone',null,['class' => 'form-control input-md'])}}
+            {{Form::label('mother_email','Email:')}}
+            {{Form::text('mother_email',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('mother_home_phone','Home Phone:')}}
-            {{Form::text('mother_home_phone',null,['class' => 'form-control input-md'])}}
+            {{Form::label('mother_contact_number_1','Contact Number 1:')}}
+            {{Form::text('mother_contact_number_1',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('mother_postal_code','Postal Code:')}}
-            {{Form::text('mother_postal_code',null,['class' => 'form-control input-md'])}}
+            {{Form::label('mother_contact_number_2','Contact Number 2:')}}
+            {{Form::text('mother_contact_number_2',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
             {{Form::label('mother_contact_address','Contact Address')}}
             {{Form::textarea('mother_contact_address',null,['class' => 'form-control'])}}
         </div>
+
+        <div class="form-group">
+            {{Form::label('mother_postal_address','Postal Address:')}}
+            {{Form::textarea('mother_postal_address',null,['class' => 'form-control input-md'])}}
+        </div>
     </div>
 
     <div id="sponsor_block" class="tabcontent">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="checkbox" id="copy_father_details" name="copy_father_details" value="1">
+                    <label for="copy_father_details"> Use Father's Details</label><br>
+                </div>
+                <div class="col-sm-6">
+                    <input type="checkbox" id="copy_mother_details" name="copy_mother_details" value="1">
+                    <label for="copy_mother_details"> Use Mother's Details</label><br>
+                </div>
+            </div>
+        </div>
+
         <div class="form-group">
             {{Form::label('sponsor_first_name','First Name:')}}
             {{Form::text('sponsor_first_name',null,['class' => 'form-control input-md'])}}
@@ -182,35 +223,49 @@
         </div>
 
         <div class="form-group">
+            {{Form::label('sponsor_email','Email:')}}
+            {{Form::text('sponsor_email',null,['class' => 'form-control input-md'])}}
+        </div>
+
+        <div class="form-group">
             {{Form::label('sponsor_relationship','Relationship with the Applicant:')}}
             {{Form::text('sponsor_relationship',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('sponsor_mobile_phone','Mobile Phone:')}}
-            {{Form::text('sponsor_mobile_phone',null,['class' => 'form-control input-md'])}}
+            {{Form::label('sponsor_contact_number_1','Contact Number 1:')}}
+            {{Form::text('sponsor_contact_number_1',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('sponsor_home_phone','Home Phone:')}}
-            {{Form::text('sponsor_home_phone',null,['class' => 'form-control input-md'])}}
-        </div>
-
-        <div class="form-group">
-            {{Form::label('sponsor_postal_code','Postal Code:')}}
-            {{Form::text('sponsor_postal_code',null,['class' => 'form-control input-md'])}}
+            {{Form::label('sponsor_contact_number_2','Contact Number 2:')}}
+            {{Form::text('sponsor_contact_number_2',null,['class' => 'form-control input-md'])}}
         </div>
 
         <div class="form-group">
             {{Form::label('sponsor_contact_address','Contact Address')}}
             {{Form::textarea('sponsor_contact_address',null,['class' => 'form-control'])}}
         </div>
+
+        <div class="form-group">
+            {{Form::label('sponsor_postal_address','Postal Address:')}}
+            {{Form::textarea('sponsor_postal_address',null,['class' => 'form-control input-md'])}}
+        </div>
     </div>
 
     <div id="confirm_block" class="tabcontent">
         <div class="form-group">
-            {{ Form::checkbox('agree',null,null, array('1'=>'agree')) }}
-            {{Form::label('agree','I hereby declare that I wish my child to attend IQRA College, Ilorin, that the particulars given on this form are to the best of my knowledge correct, that i will ensure the regular payments of his/her fees on or before the second week of each term; and that i shall cooperate fully with the school for his/her proper upbringing nd the attainment of the overall objectives of the school')}}
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="checkbox" id="agree" name="agree" value="1">
+                    <label for="agree">I hereby declare that I wish my child to attend IQRA College, Ilorin,
+                        that the information provided on this form are to the best of my knowledge correct,
+                        that I will ensure the regular payments of his/her fees on or before the second week of each
+                        term;
+                        and that I shall cooperate fully with the school for his/her proper upbringing and the
+                        attainment of the overall objectives of the school</label><br>
+                </div>
+            </div>
         </div>
 
         {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
@@ -251,5 +306,28 @@
             var block_name = $(this).attr('id') + '_block';
             document.getElementById(block_name).style.display = "block";
         }).trigger('ready');
+
+        $('#copy_mother_details').on('click', function() {
+            if ($(this).is(':checked')) {
+                copyDetails('mother');
+            }
+        });
+
+        $('#copy_father_details').on('click', function() {
+            if ($(this).is(':checked')) {
+                copyDetails('father');
+            }
+        });
+
+        function copyDetails (key) {
+            $('#sponsor_first_name').val($('#' + key + '_first_name').val());
+            $('#sponsor_last_name').val($('#' + key + '_last_name').val());
+            $('#sponsor_other_names').val($('#' + key + '_other_names').val());
+            $('#sponsor_email').val($('#' + key + '_email').val());
+            $('#sponsor_contact_number_1').val($('#' + key + '_contact_number_1').val());
+            $('#sponsor_contact_number_2').val($('#' + key + '_contact_number_2').val());
+            $('#sponsor_contact_address').val($('#' + key + '_contact_address').val());
+            $('#sponsor_postal_address').val($('#' + key + '_postal_address').val());
+        }
     </script>
 @endsection

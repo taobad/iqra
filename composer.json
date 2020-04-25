@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.2.*",
         "intervention/image": "^2.3",
         "mews/purifier": "^2.0",
-        "zizaco/entrust": "5.2.x-dev"
+        "zizaco/entrust": "5.2.x-dev",
+        "doctrine/dbal": "^2.10"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
