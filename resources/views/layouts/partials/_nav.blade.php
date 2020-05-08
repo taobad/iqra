@@ -50,6 +50,7 @@
                     @role('admin')
                         <li><a href="{{route('posts.index')}}">Posts</a></li>
                         <li><a href="{{route('uploads.get')}}">Uploads</a></li>
+                        <li><a href="{{route('documents.index')}}">Documents</a></li>
                         <li><a href="{{route('users.index')}}">Manage Users</a></li>
                         <li><a href="{{route('application.index')}}">Applications</a></li>
                     @endrole

@@ -80,6 +80,10 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     Route::resource('posts','PostController');
     Route::post('searchposts',['as' => 'posts.search','uses'=>'PostController@search']);
 
+    //Document routes
+    Route::resource('documents','DocumentController');
+    Route::post('searchdocuments',['as' => 'documents.search','uses'=>'DocumentController@search']);
+
     //Categories Controller
     Route::resource('categories','CategoryController',['except' => ['create']]);
 

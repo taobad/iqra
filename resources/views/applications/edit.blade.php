@@ -10,7 +10,13 @@
         <button class="tablinks" id="father">Father</button>
         <button class="tablinks" id="mother">Mother</button>
         <button class="tablinks" id="sponsor">Sponsor</button>
+        @role('admin')
+        <button class="tablinks" id="result">Result</button>
+        @endrole
+        <?php if(!(Auth::user() && Auth::user()->hasRole('admin'))) { ?>
         <button class="tablinks" id="confirm">Confirm & Submit</button>
+        <?php } ?>
+
     </div>
 
     {!! Form::model($application,['route' => ['application.update',$application->id],'method'=>'PUT','files'=>true]) !!}
@@ -33,7 +39,12 @@
 
         <div class="form-group">
             {{Form::label('entry_class','Entry Class:')}}
-            {{Form::select('entry_class', $entry_classes,null,['class' => 'form-control'])}}
+            <select class="form-control" name="entry_class">
+                @foreach($entry_classes as $class)
+                    <option <?php echo $application->entry_class == $class->id ? "selected=true" : "" ?>
+                         value="{{$class->id}}">{{$class->name}} </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
@@ -251,6 +262,20 @@
             {{Form::label('sponsor_postal_address','Postal Address:')}}
             {{Form::textarea('sponsor_postal_address',null,['class' => 'form-control input-md'])}}
         </div>
+    </div>
+
+    <div id="result_block" class="tabcontent">
+        <div class="form-group">
+            {{Form::label('score','Score:')}}
+            {{Form::text('score',null,['class' => 'form-control input-md'])}}
+        </div>
+
+        <div class="form-group">
+            {{Form::label('remark','Remark:')}}
+            {{Form::select('remark', $remarks, null,['class' => 'form-control'])}}
+        </div>
+        {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
+
     </div>
 
     <div id="confirm_block" class="tabcontent">

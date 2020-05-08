@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Application;
-use App\Role;
+use App\Classes;
+use App\Document;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -101,8 +102,14 @@ class ApplicationController extends Controller
     {
         $application = Application::find($id);
 
+        $documents = Document::where([
+            ['class_id','=',$application->entry_class],
+            ['document_type_id','=', 1] // Document Type Past Questions
+        ])->get();
+
+
         $data = $this->getApplicationEnums();
-        return view('applications.show')->withApplication($application)->with($data);
+        return view('applications.show')->withApplication($application)->with($data)->withDocuments($documents);
     }
 
     /**
@@ -161,9 +168,11 @@ class ApplicationController extends Controller
     public function edit($id)
     {
         $application = Application::find($id);
-
-        $view = $application->status == '2' ? 'applications.show' : 'applications.edit';
-
+        if(Auth::user() && Auth::user()->hasRole('admin')) {
+            $view = 'applications.edit';
+        }else {
+            $view = $application->status == '2' ? 'applications.show' : 'applications.edit';
+        }
         $data = $this->getApplicationEnums();
         return view($view)->withApplication($application)->with($data);
     }
@@ -171,15 +180,7 @@ class ApplicationController extends Controller
     private function getApplicationEnums()
     {
         return [
-            'entry_classes' => [
-                '' => '-- Select Class--',
-                'JSS_1' => 'JSS 1',
-                'JSS_2' => 'JSS 2',
-                'JSS_3' => 'JSS 3',
-                'SSS_1' => 'SSS 1',
-                'SSS_2' => 'SSS 2',
-                'SSS_3' => 'SSS 3'
-            ],
+            'entry_classes' => Classes::all(),
             'enrollment_centres' => [
                 '' => '-- Select Centre--',
                 'abuja' => 'Abuja',
@@ -197,6 +198,12 @@ class ApplicationController extends Controller
                 '' => '-- Select Gender--',
                 'f' => 'FEMALE',
                 'm' => 'MALE',
+            ],
+            'remarks' => [
+                '' => '-- Select Remarks --',
+                'admitted' => 'ADMITTED',
+                'admitted_with_concession' => 'ADMITTED_WITH_CONCESSION',
+                'not_admitted' => 'NOT_ADMITTED'
             ]
         ];
     }
@@ -212,7 +219,7 @@ class ApplicationController extends Controller
     {
         $application = Application::find($id);
 
-        $this->validatesRequest($request);
+        $this->validatesRequest($request, true);
         $this->setApplicationData($application, $request);
 
         // Save Applicant's image
@@ -256,9 +263,9 @@ class ApplicationController extends Controller
         return redirect()->route('users.index');
     }
 
-    private function validatesRequest(Request $request)
+    private function validatesRequest(Request $request, $is_update = false)
     {
-        $this->validate($request, [
+        $validation_config = [
             'entry_class' => 'required',
             'enrollment_centre' => 'required',
             'enrollment_type' => 'required',
@@ -281,8 +288,13 @@ class ApplicationController extends Controller
             'sponsor_contact_address' => 'required',
             'sponsor_contact_number_1' => 'required',
             'sponsor_relationship' => 'required',
+        ];
 
-        ]);
+        if($is_update) {
+            $validation_config['image'] = 'sometimes|image';
+        }
+
+        $this->validate($request, $validation_config);
     }
 
     private function setApplicationData($application, Request $request)
@@ -329,5 +341,8 @@ class ApplicationController extends Controller
         $application->sponsor_contact_number_1 = $request->sponsor_contact_number_1;
         $application->sponsor_contact_number_2 = $request->sponsor_contact_number_2;
         $application->sponsor_relationship = $request->sponsor_relationship;
+
+        $application->score = $request->score;
+        $application->remark = $request->remark;
     }
 }

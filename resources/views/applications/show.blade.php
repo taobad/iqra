@@ -10,6 +10,7 @@
         <button class="tablinks" id="father">Father</button>
         <button class="tablinks" id="mother">Mother</button>
         <button class="tablinks" id="sponsor">Sponsor</button>
+        <button class="tablinks" id="past_question">Practice Papers</button>
         <button class="tablinks" id="result">Result</button>
     </div>
 
@@ -25,7 +26,12 @@
 
         <div class="form-group">
             {{Form::label('entry_class','Entry Class:')}}
-            {{Form::select('entry_class', $entry_classes,null,['class' => 'form-control', 'disabled'=> true])}}
+            <select class="form-control" name="entry_class" disabled>
+                @foreach($entry_classes as $class)
+                    <option <?php echo $application->entry_class == $class->id ? "selected=true" : "" ?>
+                     value="{{$class->id}}">{{$class->name}} </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
@@ -205,7 +211,27 @@
         </div>
     </div>
 
+    <div id="past_question_block" class="tabcontent">
+        <ul>
+            @foreach($documents as $document)
+                <li><a class="btn btn-link" target="_blank" href="{{ $document->link }}">{{$document->name}}</a></li>
+            @endforeach
+        </ul>
+    </div>
+
     <div id="result_block" class="tabcontent">
+        <div class="form-group">
+            {{Form::label('score','Score:')}}
+            {{Form::text('score',null,['class' => 'form-control input-md', 'disabled' => true ])}}
+        </div>
+
+        <div class="form-group">
+            {{Form::label('remark','Remark:')}}
+            {{Form::select('remark', $remarks, null,['class' => 'form-control', 'disabled' => true ])}}
+        </div>
+        {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
+
+    </div>
 
 
     </div>
