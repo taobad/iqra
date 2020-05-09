@@ -31,13 +31,38 @@ class DocumentController extends Controller
     public function index()
     {
         $documents = Document::orderBy('id')->paginate(10);
-        return view('documents.index')->withDocuments($documents);
+
+        $data = [
+            'classes' => Classes::all(),
+            'documentTypes' => DocumentType::all()
+        ];
+
+        return view('documents.index')->withDocuments($documents)->with($data);
     }
 
     public function search(Request $request)
     {
-        $documents = Document::where('name','LIKE','%'.$request->name.'%')->paginate(10);
-        return view('documents.index')->withDocuments($documents);
+        $query = [];
+        if($request->name && $request->name != '') {
+            $query[] = ['name','LIKE','%'.$request->name.'%'];
+        }
+        if($request->class_id && $request->class_id != '') {
+            $query[] = ['class_id','=',$request->class_id];
+        }
+        if($request->document_type_id && $request->document_type_id != '') {
+            $query[] = ['document_type_id','LIKE',$request->document_type_id];
+        }
+
+        if(empty($query))
+            $documents = Document::orderBy('id')->paginate(10);
+        else
+            $documents = Document::where($query)->paginate(10);
+
+        $data = [
+            'classes' => Classes::all(),
+            'documentTypes' => DocumentType::all()
+        ];
+        return view('documents.index')->withDocuments($documents)->with($data);
     }
 
     /**
@@ -154,18 +179,10 @@ class DocumentController extends Controller
      */
     public function destroy($id)
     {
-        $post =  Post::find($id);
-        $post->images()->delete();
-        //empty folder before deleting
-        $filePath = 'img/posts/'.$post->id.'/';
-        File::cleanDirectory(public_path($filePath));
-        File::deleteDirectory(public_path($filePath));
+        $document =  Document::find($id);
+        $document->delete();
 
-        $post->comments()->delete();
-
-        $post->delete();
-
-        Session::flash('success',' Post deleted!');
-        return redirect()->route('posts.index');
+        Session::flash('success',' Document successfully deleted!');
+        return redirect()->route('documents.index');
     }
 }

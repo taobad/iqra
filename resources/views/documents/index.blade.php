@@ -32,6 +32,25 @@
                   <!--<p><input type="text" name="search" id="searchtext" class="form-control"><br></p>-->
                     {!! Form::open(array('route' => 'documents.search')) !!}
                       {{Form::text('name',null,['class'=>'form-control'])}}
+                      <div class="form-group">
+                          {{Form::label('class_id','Class:')}}
+                          <select class="form-control" name="class_id">
+                              <option value=""> -- Select Class -- </option>
+                              @foreach($classes as $class)
+                                  <option value="{{$class->id}}">{{$class->name}} </option>
+                              @endforeach
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                          {{Form::label('document_type_id','Document Type:')}}
+                          <select class="form-control" name="document_type_id">
+                              <option value=""> -- Select Document Type -- </option>
+                              @foreach($documentTypes as $documentType)
+                                  <option value="{{$documentType->id}}">{{$documentType->name}} </option>
+                              @endforeach
+                          </select>
+                      </div>
                   </div>
                   <div class="modal-footer">
                       {{Form::submit('Search',['class' => 'btn btn-primary', 'required'=> 'required'])}}
@@ -67,7 +86,10 @@
                             <td>{{$document->documentType->name}}</td>
                             <td>{{$document->assignedClass->name}}</td>
                             <td>{{date('M,j,Y',strtotime($document->created_at))}}</td>
-                            <td> <a class="btn btn-primary btn-sm" href="{{route('documents.edit', $document->id)}}">Edit</a></td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="{{route('documents.edit', $document->id)}}">Edit</a>
+                                <a href="{{route('documents.delete',$document->id)}}" class='btn btn-xs btn-danger'><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

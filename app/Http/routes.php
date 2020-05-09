@@ -83,6 +83,7 @@ Route::group(['middleware'=>['auth','role:admin']], function (){
     //Document routes
     Route::resource('documents','DocumentController');
     Route::post('searchdocuments',['as' => 'documents.search','uses'=>'DocumentController@search']);
+    Route::get('documents/{post_id}/delete',['as' => 'documents.delete','uses'=>'DocumentController@destroy']);
 
     //Categories Controller
     Route::resource('categories','CategoryController',['except' => ['create']]);
