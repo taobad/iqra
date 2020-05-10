@@ -4,16 +4,19 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-5">
             <h1>All Documents</h1>
         </div>
 
 
         <div class="col-md-2 app-button">
-            <a href="{{route('documents.create')}}" class="btn btn-primary btn-lg btn-block"> Add Document</a>
+            <a href="{{route('documents.create')}}" class="btn btn-primary btn-lg btn-block"> Add</a>
         </div>
         <div class="col-md-2 app-button">
-            <p><button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search Documents</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search</button>
+        </div>
+        <div class="col-md-2 app-button">
+            <a href="{{route('documents.index')}}" class="btn btn-primary btn-lg btn-block"> Clear Search</a>
         </div>
 
         <div class="col-md-12">
@@ -26,12 +29,15 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Search Documents By Name</h4>
+                    <h4 class="modal-title">Search Documents</h4>
                   </div>
                   <div class="modal-body">
                   <!--<p><input type="text" name="search" id="searchtext" class="form-control"><br></p>-->
                     {!! Form::open(array('route' => 'documents.search')) !!}
-                      {{Form::text('name',null,['class'=>'form-control'])}}
+                      <div class="form-group">
+                          {{Form::label('name','Document Name:')}}
+                          {{Form::text('name',null,['class'=>'form-control'])}}
+                      </div>
                       <div class="form-group">
                           {{Form::label('class_id','Class:')}}
                           <select class="form-control" name="class_id">
@@ -84,7 +90,7 @@
                                 <a class="btn btn-link" target="_blank" href="{{ $document->link }}">{{$document->name}}</a>
                             </td>
                             <td>{{$document->documentType->name}}</td>
-                            <td>{{$document->assignedClass->name}}</td>
+                            <td><?php echo !!$document->class_id ? $document->assignedClass->name : '-' ?></td>
                             <td>{{date('M,j,Y',strtotime($document->created_at))}}</td>
                             <td>
                                 <a class="btn btn-primary btn-sm" href="{{route('documents.edit', $document->id)}}">Edit</a>

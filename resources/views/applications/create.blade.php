@@ -19,7 +19,7 @@
             {!! Form::open(array('route' => 'application.store')) !!}
 
                 <div class="form-group">
-                    {{Form::label('teller_number','Teller No:')}}
+                    {{Form::label('teller_number','Teller / Receipt No:')}}
                     {{Form::text('teller_number', null, ['class'=>'form-control'])}}
                 </div>
 

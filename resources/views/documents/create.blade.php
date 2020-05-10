@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Create New Post</h1>
+            <h1>Add New Document</h1>
             <hr>
             {!! Form::open(array('route' => 'documents.store', 'files'=>true )) !!}
 
@@ -15,6 +15,7 @@
                 <div class="form-group">
                     {{Form::label('class_id','Class:')}}
                     <select class="form-control" name="class_id">
+                        <option value=""> -- Select Class --</option>
                         @foreach($classes as $class)
                             <option value="{{$class->id}}">{{$class->name}} </option>
                         @endforeach

@@ -4,15 +4,18 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-5">
             <h1>All Applications</h1>
         </div>
 
         <div class="col-md-2 app-button">
-              <a href="{{route('application.create')}}" class="btn btn-primary btn-lg btn-block"> Create Application</a>
+              <a href="{{route('application.create')}}" class="btn btn-primary btn-lg btn-block"> Add </a>
         </div>
         <div class="col-md-2 app-button">
-             <p><button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search Applications</button>
+             <p><button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search</button>
+        </div>
+        <div class="col-md-2 app-button">
+            <a href="{{route('application.index')}}" class="btn btn-primary btn-lg btn-block"> Clear Search </a>
         </div>
 
         <div class="col-md-12">

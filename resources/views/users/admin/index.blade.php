@@ -5,15 +5,18 @@
 @section('content')
     @include('layouts.partials._sort-roles')
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-5">
             <h1>All users</h1>
         </div>
 
         <div class="col-md-2 app-button">
-              <a href="{{route('users.create')}}" class="btn btn-primary btn-lg btn-block"> Add New User</a>
+              <a href="{{route('users.create')}}" class="btn btn-primary btn-lg btn-block"> Add </a>
         </div>
         <div class="col-md-2 app-button">
-             <p><button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search Users</button>
+             <p><button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search</button>
+        </div>
+        <div class="col-md-2 app-button">
+            <a href="{{route('users.index')}}" class="btn btn-primary btn-lg btn-block"> Clear Search </a>
         </div>
 
         <div class="col-md-12">

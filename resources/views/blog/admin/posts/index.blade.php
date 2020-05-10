@@ -5,15 +5,18 @@
 @section('content')
     @include('layouts.partials._sort-category')
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-5">
             <h1>All posts</h1>
         </div>
 
         <div class="col-md-2 app-button">
-              <a href="{{route('posts.create')}}" class="btn btn-primary btn-lg btn-block"> Create New Post</a>
+              <a href="{{route('posts.create')}}" class="btn btn-primary btn-lg btn-block"> Add </a>
         </div>
         <div class="col-md-2 app-button">
-             <p><button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search Posts</button>
+             <p><button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Search</button>
+        </div>
+        <div class="col-md-2 app-button">
+            <a href="{{route('posts.index')}}" class="btn btn-primary btn-lg btn-block"> Clear Search </a>
         </div>
 
         <div class="col-md-12">

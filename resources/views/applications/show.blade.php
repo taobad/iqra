@@ -10,7 +10,7 @@
         <button class="tablinks" id="father">Father</button>
         <button class="tablinks" id="mother">Mother</button>
         <button class="tablinks" id="sponsor">Sponsor</button>
-        <button class="tablinks" id="past_question">Practice Papers</button>
+        <button class="tablinks" id="past_question">Past Question Papers</button>
         <button class="tablinks" id="result">Result</button>
     </div>
 

@@ -14,6 +14,7 @@
             <div class="form-group">
                 {{Form::label('class_id','Class:')}}
                 <select class="form-control" name="class_id">
+                    <option value=""> -- Select Class --</option>
                     @foreach($classes as $class)
                         <option <?php echo $document->class_id == $class->id ? "selected=true" : "" ?>
                                 value="{{$class->id}}">{{$class->name}} </option>
@@ -26,7 +27,7 @@
                 <select class="form-control" name="document_type_id">
                     @foreach($documentTypes as $documentType)
                         <option <?php echo $document->document_type_id == $documentType->id ? "selected=true" : "" ?>
-                         value="{{$documentType->id}}">{{$documentType->name}} </option>
+                                value="{{$documentType->id}}">{{$documentType->name}} </option>
                     @endforeach
                 </select>
             </div>
