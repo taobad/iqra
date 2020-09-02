@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-3" style="margin-top: 15px; background: lightgray">
+        <div class="col-md-3" style="margin: 15px; background: lightgray">
             <div class="post">
                 <h1>Apply for Enrollmenent </h1>
                 <p> To apply for Enrollment, please pay the enrollment fee to a bank. Use the generated code to start and retrieve your
