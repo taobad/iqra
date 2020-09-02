@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-4" style="margin-top: 15px; background: lightgray">
+        <div class="col-md-3" style="margin-top: 15px; background: lightgray">
             <div class="post">
                 <h1>Apply for Enrollmenent </h1>
                 <p> To apply for Enrollment, please pay the enrollment fee to a bank. Use the generated code to start and retrieve your
@@ -12,7 +12,7 @@
                 <a href="{{route('application.prospect')}}" class="btn btn-primary btn-lg btn-block">Start/Retrieve an Application</a>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6 col-md-offset-1">
             <div class="row">
                 <div class="col-md-12">
                     <h1>Latest Admissions News</h1>
