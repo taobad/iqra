@@ -1,14 +1,30 @@
 @extends('layouts.app')
 
 @section('title',"| Admissions")
-
 @section('content')
     <div class="row">
         <div class="col-md-3" style="margin: 15px; background: lightgray">
             <div class="post">
-                <h1>Apply for Enrollmenent </h1>
-                <p> To apply for Enrollment, please pay the enrollment fee to a bank. Use the generated code to start and retrieve your
-                application. to start click on the button below.</p>
+                <h1>Online Application Form For Admision</h1>
+                <p> To complete an online application form, pay N6000 into our bank account and send evidence of payment to +234 803 944 7200. A code will be sent to the telephone line through which you sent payment evidence. You will then tap the blue bar below to enter the code and complete the form. In case you are purchasing more than one form, repeat the process for each.</p>
+                <p>TNOTES</p>
+                <ol>
+                    <li>Bank Account Details</li>
+                    <ol type="a">
+                        <li>IQRA College, Ilorin
+                            Jaiz Bank
+                            0002544948</li>
+                        <li>IQRA College, Ilorin
+                            UBA
+                            1017303632</li>
+                    </ol>
+                    <li>Evidence of Payment</li>
+                    <ol type="a">
+                        <li>Teller (pat-in slip) reference   number with our bank’s name and payment date</li>
+                        <li>Fund transfer reference   number with our bank’s name and payment date</li>
+                    </ol>
+                    <li>Application Form fee is N7500 if group entrance examination has closed and the candidate will take individual exam</li>
+                </ol>
                 <a href="{{route('application.prospect')}}" class="btn btn-primary btn-lg btn-block">Start/Retrieve an Application</a>
             </div>
         </div>
