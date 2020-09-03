@@ -7,7 +7,7 @@
             <div class="post">
                 <h1>Online Application Form For Admision</h1>
                 <p> To complete an online application form, pay N6000 into our bank account and send evidence of payment to +234 803 944 7200. A code will be sent to the telephone line through which you sent payment evidence. You will then tap the blue bar below to enter the code and complete the form. In case you are purchasing more than one form, repeat the process for each.</p>
-                <p>TNOTES</p>
+                <p>NOTES</p>
                 <ol>
                     <li>Bank Account Details</li>
                     <ol type="a">
