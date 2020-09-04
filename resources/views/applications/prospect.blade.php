@@ -14,12 +14,12 @@
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Create New Application</h1>
+            <h1>Create A Fresh Application Form For Admission</h1>
             <hr>
             {!! Form::open(array('route' => 'application.retrieve')) !!}
 
                 <div class="form-group">
-                    {{Form::label('application_ref','Receipt No:')}}
+                    {{Form::label('application_ref','Enter the code sent to you by the College:')}}
                     {{Form::text('application_ref', null, ['class'=>'form-control'])}}
                 </div>
 

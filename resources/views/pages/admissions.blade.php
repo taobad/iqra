@@ -5,10 +5,12 @@
     <div class="row">
         <div class="col-md-3" style="margin: 15px; padding-bottom: 15px;  background: lightgray">
             <div class="post">
-                <h1>Online Application Form For Admision</h1>
+                <h1>Online Application Form For Admission</h1>
                 <p> To complete an online application form, pay N6000 into our bank account and send evidence of payment to +234 803 944 7200. A code will be sent to the telephone line through which you sent payment evidence. You will then tap the blue bar below to enter the code and complete the form. In case you are purchasing more than one form, repeat the process for each.</p>
                 <p>NOTES</p>
                 <ol>
+                    <li>Entrance examination holds on Saturday 24th October 2020</li>
+                    <li>Keep handy the code sent to you by the College as you will need it to check the entrance examination result</li>
                     <li>Bank Account Details</li>
                     <ol type="a">
                         <li>IQRA College, Ilorin
@@ -24,6 +26,7 @@
                         <li>Fund transfer reference   number with our bank’s name and payment date</li>
                     </ol>
                     <li>Application Form fee is N7500 if group entrance examination has closed and the candidate will take individual exam</li>
+                    <li>Download past questions for the candidate to practice by clicking on the ’past question Papers’ icon</li>
                 </ol>
                 <a href="{{route('application.prospect')}}" class="btn btn-primary btn-lg btn-block">Start/Retrieve an Application</a>
             </div>

@@ -127,7 +127,7 @@ class ApplicationController extends Controller
 
         $app = Application::where('application_ref', '=', $request->application_ref )->first();
         if (!$app) {
-            Session::flash('danger', ' Invalid Receipt No.');
+            Session::flash('danger', ' Invalid Application Reference No.');
             return redirect()->route('application.prospect');
         } else {
             $route = $app->status == '2' ? "viewapplication/$app->id" : "editapplication/$app->id";
