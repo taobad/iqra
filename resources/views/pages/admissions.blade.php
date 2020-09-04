@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-3" style="margin: 15px; padding-bottom: 15px;  background: lightgray">
             <div class="post">
-                <h1>Online Application Form For Admission</h1>
+                <h3>Online Application Form For Admission</h3>
                 <p> To complete an online application form, pay N6000 into our bank account and send evidence of payment to +234 803 944 7200. A code will be sent to the telephone line through which you sent payment evidence. You will then tap the blue bar below to enter the code and complete the form. In case you are purchasing more than one form, repeat the process for each.</p>
                 <p>NOTES</p>
                 <ol>
