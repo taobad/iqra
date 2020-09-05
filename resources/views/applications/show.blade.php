@@ -229,8 +229,6 @@
             {{Form::label('remark','Remark:')}}
             {{Form::select('remark', $remarks, null,['class' => 'form-control', 'disabled' => true ])}}
         </div>
-        {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
-
     </div>
 
 
