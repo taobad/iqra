@@ -22,11 +22,11 @@
                     </ol>
                     <li>Evidence of Payment</li>
                     <ol type="a">
-                        <li>Teller (pat-in slip) reference   number with our bank’s name and payment date</li>
+                        <li>Teller (pay-in slip) reference   number with our bank’s name and payment date</li>
                         <li>Fund transfer reference   number with our bank’s name and payment date</li>
                     </ol>
                     <li>Application Form fee is N7500 if group entrance examination has closed and the candidate will take individual exam</li>
-                    <li>Download past questions for the candidate to practice by clicking on the ’past question Papers’ icon</li>
+                    <li>Download Past Questions for the candidate to practice by clicking on the ’Past Question Papers’ icon</li>
                 </ol>
                 <a href="{{route('application.prospect')}}" class="btn btn-primary btn-lg btn-block">Start/Retrieve an Application</a>
             </div>
