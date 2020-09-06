@@ -41,8 +41,10 @@
 
         <div class="form-group">
             {{Form::label('enrollment_centre','Preferred Exam Centre:')}}
-            {{Form::select('enrollment_centre', $enrollment_centres,null,['class' => 'form-control', 'disabled'=> true])}}
+            {{Form::select('enrollment_centre', $enrollment_centres,null,['id'=> 'enrollment_centre', 'class' => 'form-control', 'disabled'=> true])}}
         </div>
+
+        <p id="exam_centre_details"></p>
     </div>
 
     <div id="applicant_details_block" class="tabcontent">
@@ -268,5 +270,50 @@
             var block_name = $(this).attr('id') + '_block';
             document.getElementById(block_name).style.display = "block";
         }).trigger('ready');
+
+        $('#enrollment_centre').on('load change', function(){
+            if($(this).val() = 'ilorin') {
+                $('#exam_centre_details').text(
+                    'ILORIN\n' +
+                    '        IQRA College, Ilorin,\n' +
+                    '            Adebayo Ojuolape Street,\n' +
+                    '            Islamic Village,\n' +
+                    '            Near Pilgrims Camp, Ilorin.\n' +
+                    '        08039447200, 08056646541'
+                );
+            }
+        }).trigger('load');
+
+
+        $('#enrollment_centre').on('load change', function(){
+            if($(this).val() == 'ilorin') {
+                $('#exam_centre_details').text(
+                    'IQRA College, Ilorin, Adebayo Ojuolape Street, Islamic Village, Near Pilgrims Camp, Ilorin. 08039447200, 08056646541'
+                );
+            }
+            else if($(this).val() == 'abuja') {
+                $('#exam_centre_details').text(
+                    'Model Islamic Schools, Queen Amina Way, Phase 2, Site 2 (2/2), Kubwa, Abuja. 08023571765, 08120613391'
+                );
+            }
+            else if($(this).val() == 'lagos') {
+                $('#exam_centre_details').text(
+                    'Faridah Children’s School, 344 Murtala Muhammed Way, Yaba, Lagos. 08027865577'
+                );
+            }
+            else if($(this).val() == 'port-harcout') {
+                $('#exam_centre_details').text(
+                    'Zenith School, 1 Endless Extension, Ogbatai, Woji, Port-Harcourt. 08035383897'
+                );
+            }
+            else if($(this).val() == 'warri') {
+                $('#exam_centre_details').text(
+                    'Ummatul-Islam Islamiyya, Refinery Drive, NNPC Housing Complex, Ekpan, Warri. 080535571134'
+                );
+            } else {
+                $('#exam_centre_details').text('');
+            }
+        }).trigger('load');
+
     </script>
 @endsection

@@ -56,6 +56,9 @@
             {{Form::label('enrollment_centre','Preferred Exam Centre:')}}
             {{Form::select('enrollment_centre', $enrollment_centres,null,['class' => 'form-control'])}}
         </div>
+
+        <p id="exam_centre_details"></p>
+
     </div>
 
     <div id="applicant_details_block" class="tabcontent">
@@ -354,5 +357,36 @@
             $('#sponsor_contact_address').val($('#' + key + '_contact_address').val());
             $('#sponsor_postal_address').val($('#' + key + '_postal_address').val());
         }
+
+
+        $('#enrollment_centre').on('load change', function(){
+            if($(this).val() == 'ilorin') {
+                $('#exam_centre_details').text(
+                    'IQRA College, Ilorin, Adebayo Ojuolape Street, Islamic Village, Near Pilgrims Camp, Ilorin. 08039447200, 08056646541'
+                );
+            }
+            else if($(this).val() == 'abuja') {
+                $('#exam_centre_details').text(
+                    'Model Islamic Schools, Queen Amina Way, Phase 2, Site 2 (2/2), Kubwa, Abuja. 08023571765, 08120613391'
+                );
+            }
+            else if($(this).val() == 'lagos') {
+                $('#exam_centre_details').text(
+                    'Faridah Children’s School, 344 Murtala Muhammed Way, Yaba, Lagos. 08027865577'
+                );
+            }
+            else if($(this).val() == 'port-harcout') {
+                $('#exam_centre_details').text(
+                    'Zenith School, 1 Endless Extension, Ogbatai, Woji, Port-Harcourt. 08035383897'
+                );
+            } else if ($(this).val() == 'warri') {
+                $('#exam_centre_details').text(
+                    'Ummatul-Islam Islamiyya, Refinery Drive, NNPC Housing Complex, Ekpan, Warri. 080535571134'
+                );
+            } else {
+                $('#exam_centre_details').text('');
+            }
+        }).trigger('load');
+
     </script>
 @endsection
