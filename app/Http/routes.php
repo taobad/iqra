@@ -61,18 +61,20 @@ Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController
 
 //manage application
 Route::resource('application','ApplicationController');
-Route::post('searchapplications',['as' => 'application.search','uses'=>'ApplicationController@search']);
 Route::get('prospectapplication',['as' => 'application.prospect','uses'=>'ApplicationController@prospect']);
 Route::post('retrieveapplication',['as' => 'application.retrieve','uses'=>'ApplicationController@retrieve']);
 Route::get('/viewapplication/{id}',['as' => 'application.viewapp','uses'=>'ApplicationController@show']);
 Route::get('/editapplication/{id}',['as' => 'application.editapp','uses'=>'ApplicationController@edit']);
-Route::get('application/{post_id}/delete',['as' => 'application.delete','uses'=>'ApplicationController@destroy']);
 
 Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsController@store','middleware'=>['role:user|admin']]);
 
 
 //Admin routes
 Route::group(['middleware'=>['auth','role:admin']], function (){
+
+    Route::post('searchapplications',['as' => 'application.search','uses'=>'ApplicationController@search']);
+    Route::get('application/{post_id}/delete',['as' => 'application.delete','uses'=>'ApplicationController@destroy']);
+
     //register users
     Route::get('register', 'PageController@getRegister');
     Route::post('register', 'PageController@postRegister');
