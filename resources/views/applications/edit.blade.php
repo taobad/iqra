@@ -263,6 +263,8 @@
     <div id="review_block" class="tabcontent">
 
         <?php if(!(Auth::user() && Auth::user()->hasRole('admin'))) { ?>
+
+        <?php if($application->status == '1') { ?>
         <div class="form-group">
             <div class="row">
                 <div class="col-sm-12">
@@ -276,6 +278,7 @@
                 </div>
             </div>
         </div>
+        <?php } ?>
 
         {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
         <?php } ?>
