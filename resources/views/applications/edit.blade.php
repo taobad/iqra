@@ -10,12 +10,7 @@
         <button class="tablinks" id="father">Father</button>
         <button class="tablinks" id="mother">Mother</button>
         <button class="tablinks" id="sponsor">Sponsor</button>
-        @role('admin')
-        <button class="tablinks" id="result">Result</button>
-        @endrole
-        <?php if(!(Auth::user() && Auth::user()->hasRole('admin'))) { ?>
-        <button class="tablinks" id="confirm">Confirm & Submit</button>
-        <?php } ?>
+        <button class="tablinks" id="review">Review / Result</button>
 
     </div>
 
@@ -56,8 +51,6 @@
             {{Form::label('enrollment_centre','Preferred Exam Centre:')}}
             {{Form::select('enrollment_centre', $enrollment_centres,null,['class' => 'form-control'])}}
         </div>
-
-        <p id="exam_centre_details"></p>
 
     </div>
 
@@ -267,21 +260,9 @@
         </div>
     </div>
 
-    <div id="result_block" class="tabcontent">
-        <div class="form-group">
-            {{Form::label('score','Score:')}}
-            {{Form::text('score',null,['class' => 'form-control input-md'])}}
-        </div>
+    <div id="review_block" class="tabcontent">
 
-        <div class="form-group">
-            {{Form::label('remark','Remark:')}}
-            {{Form::select('remark', $remarks, null,['class' => 'form-control'])}}
-        </div>
-        {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
-
-    </div>
-
-    <div id="confirm_block" class="tabcontent">
+        <?php if(!(Auth::user() && Auth::user()->hasRole('admin'))) { ?>
         <div class="form-group">
             <div class="row">
                 <div class="col-sm-12">
@@ -297,7 +278,56 @@
         </div>
 
         {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
+        <?php } ?>
+        <?php if($application->status == '2') {
+        if ($application->enrollment_centre == 'ilorin') {
+            $text = 'IQRA College, Ilorin, Adebayo Ojuolape Street, Islamic Village, Near Pilgrims Camp, Ilorin. 08039447200, 08056646541';
+        } else if ($application->enrollment_centre == 'abuja') {
+            $text = 'Model Islamic Schools, Queen Amina Way, Phase 2, Site 2 (2/2), Kubwa, Abuja. 08023571765, 08120613391';
+        } else if ($application->enrollment_centre == 'lagos') {
+            $text = 'Faridah Children’s School, 344 Murtala Muhammed Way, Yaba, Lagos. 08027865577';
+        } else if ($application->enrollment_centre == 'port-harcout') {
+            $text = 'Zenith School, 1 Endless Extension, Ogbatai, Woji, Port-Harcourt. 08035383897';
+        } else if ($application->enrollment_centre == 'warri') {
+            $text = 'Ummatul-Islam Islamiyya, Refinery Drive, NNPC Housing Complex, Ekpan, Warri. 080535571134';
+        } else {
+            $text = '';
+        }?>
 
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-md-8">
+                <label>You have successfully submitted your Application Form For Admission.
+                    Examination date is 24th October 2020</label>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Exam Centre</div>
+
+                <div class="panel-body">
+                    <p><i><?php echo $text; ?></i></p>
+                </div>
+            </div>
+        </div>
+        <?php }?>
+
+
+        @role('admin')
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    {{Form::label('score','Score:')}}
+                    {{Form::text('score',null,['class' => 'form-control input-md'])}}
+                </div>
+
+                <div class="form-group">
+                    {{Form::label('remark','Remark:')}}
+                    {{Form::select('remark', $remarks, null,['class' => 'form-control'])}}
+                </div>
+            </div>
+        </div>
+        @endrole
     </div>
 
     {!! Form::close() !!}
@@ -357,36 +387,6 @@
             $('#sponsor_contact_address').val($('#' + key + '_contact_address').val());
             $('#sponsor_postal_address').val($('#' + key + '_postal_address').val());
         }
-
-
-        $('#enrollment_centre').on('load change', function(){
-            if($(this).val() == 'ilorin') {
-                $('#exam_centre_details').text(
-                    'IQRA College, Ilorin, Adebayo Ojuolape Street, Islamic Village, Near Pilgrims Camp, Ilorin. 08039447200, 08056646541'
-                );
-            }
-            else if($(this).val() == 'abuja') {
-                $('#exam_centre_details').text(
-                    'Model Islamic Schools, Queen Amina Way, Phase 2, Site 2 (2/2), Kubwa, Abuja. 08023571765, 08120613391'
-                );
-            }
-            else if($(this).val() == 'lagos') {
-                $('#exam_centre_details').text(
-                    'Faridah Children’s School, 344 Murtala Muhammed Way, Yaba, Lagos. 08027865577'
-                );
-            }
-            else if($(this).val() == 'port-harcout') {
-                $('#exam_centre_details').text(
-                    'Zenith School, 1 Endless Extension, Ogbatai, Woji, Port-Harcourt. 08035383897'
-                );
-            } else if ($(this).val() == 'warri') {
-                $('#exam_centre_details').text(
-                    'Ummatul-Islam Islamiyya, Refinery Drive, NNPC Housing Complex, Ekpan, Warri. 080535571134'
-                );
-            } else {
-                $('#exam_centre_details').text('');
-            }
-        }).trigger('load');
 
     </script>
 @endsection
