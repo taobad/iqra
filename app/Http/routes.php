@@ -60,7 +60,6 @@ Route::get('/cats/{id}', ['as' => 'pub_categories.show','uses'=> 'PageController
 //Route::get('/blog', ['as' => 'blog.index','uses'=> 'BlogController@getIndex']);
 
 //manage application
-Route::resource('application','ApplicationController');
 Route::get('prospectapplication',['as' => 'application.prospect','uses'=>'ApplicationController@prospect']);
 Route::post('retrieveapplication',['as' => 'application.retrieve','uses'=>'ApplicationController@retrieve']);
 Route::get('/viewapplication/{id}',['as' => 'application.viewapp','uses'=>'ApplicationController@show']);
@@ -71,7 +70,7 @@ Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsCont
 
 //Admin routes
 Route::group(['middleware'=>['auth','role:admin']], function (){
-
+    Route::resource('application','ApplicationController');
     Route::post('searchapplications',['as' => 'application.search','uses'=>'ApplicationController@search']);
     Route::get('application/{post_id}/delete',['as' => 'application.delete','uses'=>'ApplicationController@destroy']);
 
