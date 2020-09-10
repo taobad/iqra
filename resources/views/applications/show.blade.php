@@ -11,7 +11,9 @@
         <button class="tablinks" id="mother">Mother</button>
         <button class="tablinks" id="sponsor">Sponsor</button>
         <button class="tablinks" id="review">Review / Result</button>
+        <?php if($application->status == '2') { ?>
         <button class="tablinks" id="past_question">Past Question Papers</button>
+        <?php } ?>
     </div>
 
     {!! Form::model($application,['route' => ['application.update',$application->id],'method'=>'PUT','files'=>true]) !!}
