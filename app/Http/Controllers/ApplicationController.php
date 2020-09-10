@@ -249,18 +249,16 @@ class ApplicationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->roles()->delete();
+        $application = Application::find($id);
+        $application->delete();
 
-        $user->delete();
-
-        Session::flash('success', ' User deleted!');
-        return redirect()->route('users.index');
+        Session::flash('success',' Application successfully deleted!');
+        return redirect()->route('application.index');
     }
 
     private function validatesRequest(Request $request, $is_update = false)

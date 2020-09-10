@@ -65,7 +65,11 @@
                             <td>{{$application->application_ref}}</td>
                             <td>{{$application->enrollment_centre}}</td>
                             <td>{{date('M,j,Y',strtotime($application->created_at))}}</td>
-                            <td><a class="btn btn-primary btn-sm" href="{{route('application.show',$application->id)}}">View</a> <a class="btn btn-primary btn-sm" href="{{route('application.edit', $application->id)}}">Edit</a></td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="{{route('application.show',$application->id)}}">View</a>
+                                <a class="btn btn-primary btn-sm" href="{{route('application.edit', $application->id)}}">Edit</a>
+                                <a href="{{route('application.delete',$application->id)}}" class='btn btn-xs btn-danger'><span class="glyphicon glyphicon-trash"></span></a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

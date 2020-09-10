@@ -66,6 +66,7 @@ Route::get('prospectapplication',['as' => 'application.prospect','uses'=>'Applic
 Route::post('retrieveapplication',['as' => 'application.retrieve','uses'=>'ApplicationController@retrieve']);
 Route::get('/viewapplication/{id}',['as' => 'application.viewapp','uses'=>'ApplicationController@show']);
 Route::get('/editapplication/{id}',['as' => 'application.editapp','uses'=>'ApplicationController@edit']);
+Route::get('application/{post_id}/delete',['as' => 'application.delete','uses'=>'ApplicationController@destroy']);
 
 Route::post('comments/{post_id}',['as' => 'comments.store','uses'=>'CommentsController@store','middleware'=>['role:user|admin']]);
 
