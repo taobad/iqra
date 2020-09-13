@@ -53,7 +53,7 @@
                     } else if ($application->enrollment_centre == 'port-harcout') {
                         $text = 'Zenith School, 1 Endless Extension, Ogbatai, Woji, Port-Harcourt. 08035383897';
                     } else if ($application->enrollment_centre == 'warri') {
-                        $text = 'Ummatul-Islam Islamiyya, Refinery Drive, NNPC Housing Complex, Ekpan, Warri. 080535571134';
+                        $text = 'Ummatul-Islam Islamiyya, Refinery Drive, NNPC Housing Complex, Ekpan, Warri. 08053571134';
                     } else {
                         $text = '';
                     }?>
