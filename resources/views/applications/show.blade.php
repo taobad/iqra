@@ -20,6 +20,10 @@
 
             <div class="panel-body">
                 <div class="col-md-6">
+                    {!! Html::image("img/admission/$application->application_ref/$application->image_name", 'image',
+                    ['data-u' => 'image', 'width' => 200, 'height' => 200]) !!}
+                </div>
+                <div class="col-md-6">
                     <div class="row">
                 <div class="col-md-12">
                     <label>Application Reference: </label>
@@ -57,10 +61,6 @@
                     <span><?php echo $text ?></span>
                 </div>
                     </div>
-                </div>
-                <div class="col-md-6 pull-right">
-                    {!! Html::image("img/admission/$application->application_ref/$application->image_name", 'image',
-                    ['data-u' => 'image', 'width' => 200, 'height' => 200]) !!}
                 </div>
             </div>
         </div>
