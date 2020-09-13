@@ -10,8 +10,8 @@
         <button class="tablinks" id="father">Father</button>
         <button class="tablinks" id="mother">Mother</button>
         <button class="tablinks" id="sponsor">Sponsor</button>
-        <button class="tablinks" id="review">Review / Result</button>
         <?php if($application->status == '2') { ?>
+        <button class="tablinks" id="result">Result</button>
         <button class="tablinks" id="past_question">Past Question Papers</button>
         <?php } ?>
     </div>
@@ -224,26 +224,7 @@
         </ul>
     </div>
     <?php } ?>
-
-    <div id="review_block" class="tabcontent">
-
-        <?php if($application->status == '1') { ?>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm-12">
-                    <input type="checkbox" id="agree" name="agree" value="1">
-                    <label for="agree">I hereby declare that I wish my child to attend IQRA College, Ilorin,
-                        that the information provided on this form are to the best of my knowledge correct,
-                        that I will ensure the regular payments of his/her fees on or before the second week of each
-                        term;
-                        and that I shall cooperate fully with the school for his/her proper upbringing and the
-                        attainment of the overall objectives of the school</label><br>
-                </div>
-            </div>
-        </div>
-
-        {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
-        <?php } ?>
+    <div id="result_block" class="tabcontent">
         <?php if($application->status == '2') {
         if ($application->enrollment_centre == 'ilorin') {
             $text = 'IQRA College, Ilorin, Adebayo Ojuolape Street, Islamic Village, Near Pilgrims Camp, Ilorin. 08039447200, 08056646541';

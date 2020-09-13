@@ -10,7 +10,12 @@
         <button class="tablinks" id="father">Father</button>
         <button class="tablinks" id="mother">Mother</button>
         <button class="tablinks" id="sponsor">Sponsor</button>
-        <button class="tablinks" id="review">Review / Result</button>
+        <?php if($application->status == '1') { ?>
+        <button class="tablinks" id="review">Review</button>
+        <?php } ?>
+        <?php if($application->status == '2') { ?>
+        <button class="tablinks" id="result">Result</button>
+        <?php } ?>
 
     </div>
 
@@ -273,10 +278,14 @@
                         and that I shall cooperate fully with the school for his/her proper upbringing and the
                         attainment of the overall objectives of the school</label><br>
                 </div>
+                <div class="col-md-4">
+                    {{Form::submit('Submit',['class'=>  "btn btn-primary btn-block" ])}}
+                </div>
             </div>
         </div>
+    </div>
 
-        {{Form::submit('Save',['class'=>  "btn btn-primary btn-block" ])}}
+    <div id="result_block" class="tabcontent">
         <?php } ?>
         <?php if($application->status == '2') {
         if ($application->enrollment_centre == 'ilorin') {
