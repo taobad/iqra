@@ -242,7 +242,7 @@ class ApplicationController extends Controller
         $application->save();
 
         Session::flash('success', ' Application Submitted  Successfully!');
-        return redirect()->route('application.viewapp');
+        return redirect()->route('application.viewapp', [$id]);
     }
 
 
