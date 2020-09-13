@@ -20,10 +20,12 @@
 
             <div class="panel-body">
                 <div class="col-md-6">
+                    <div class="row">
+                <div class="col-md-12">
                     <label>Application Reference: </label>
                     <span><?php echo $application->application_ref ?></span>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label>Entry Class: </label>
                     <span><?php
                         foreach ($entry_classes as $class) {
@@ -33,12 +35,11 @@
                         }
                         ?></span>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label>Enrollment Type: </label>
                     <span><?php echo $application->enrollment_type ?></span>
                 </div>
-
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <?php if ($application->enrollment_centre == 'ilorin') {
                         $text = 'IQRA College, Ilorin, Adebayo Ojuolape Street, Islamic Village, Near Pilgrims Camp, Ilorin. 08039447200, 08056646541';
                     } else if ($application->enrollment_centre == 'abuja') {
@@ -54,6 +55,12 @@
                     }?>
                     <label>Preferred Exam Centre: </label>
                     <span><?php echo $text ?></span>
+                </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pull-right">
+                    {!! Html::image("img/admission/$application->application_ref/$application->image_name", 'image',
+                    ['data-u' => 'image', 'width' => 200, 'height' => 200]) !!}
                 </div>
             </div>
         </div>
@@ -103,8 +110,6 @@
                     <label>Individual Peculiarity:</label>
                     <span><?php echo $application->individual_peculiarity ?></span>
                 </div>
-
-                {!! Html::image("img/admission/$application->application_ref/$application->image_name", 'image', ['data-u' => 'image']) !!}
 
             </div>
         </div>
