@@ -67,7 +67,7 @@
     <hr>
     <div class="row">
         <div class="col-md-12">
-            <span>Results found: <?php echo $applications->total(); ?></span>
+            <span><b>Results found: <?php echo $applications->total(); ?></b></span>
             <table class="table">
                 <thead>
                 <th>#</th>
@@ -98,7 +98,7 @@
             </table>
 
             <div class="text-center">
-                {!! $applications->links() !!}
+                {!! $applications->render() !!}
             </div>
         </div>
     </div>
