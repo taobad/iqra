@@ -32,14 +32,49 @@ class ApplicationController extends Controller
     public function index()
     {
         $applications = Application::orderBy('id', 'desc')->paginate(10);
-        return view('applications.index')->withApplications($applications);
+
+        $data = $this->getApplicationEnums();
+        $data['request'] = new Request();
+        return view('applications.index')->withApplications($applications)->with($data);
     }
 
     public function search(Request $request)
     {
-        $applications = Application::where('application_ref', 'like', '%' . $request->application_ref . '%')
-            ->orderBy('lastname')->paginate(10);
-        return view('applications.index')->withApplications($applications);
+        $formatted_query = $this->queryBuilder($request);
+        if(!empty($formatted_query)) {
+            $applications = Application::where($formatted_query)
+                ->orderBy('created_at', 'desc')->paginate(10);
+        } else {
+            $applications = Application::orderBy('created_at', 'desc')->paginate(10);
+        }
+
+        $data = $this->getApplicationEnums();
+        $data['request'] = $request;
+
+        return view('applications.index')->withApplications($applications)->with($data);
+    }
+
+    private function queryBuilder(Request $request)
+    {
+        $equal_to_fields = ['status', 'application_ref', 'entry_class', 'enrollment_centre', 'enrollment_type', 'gender'];
+        $like_fields = ['first_name', 'last_name', 'other_names'];
+
+        $where = [];
+        // format Equal to fields if set in request
+        foreach ($equal_to_fields as $field) {
+            if (isset($request->{$field}) && !empty($request->{$field})) {
+                $where[] = ["$field", '=', $request->{$field}];
+            }
+        }
+
+        // Format Like Fields
+        foreach ($like_fields as $field) {
+            if (isset($request->{$field}) && !empty($request->{$field})) {
+                $where[] = ["$field", 'LIKE', "%$request->{$field}%"];
+            }
+        }
+
+        return $where;
     }
 
     /**
