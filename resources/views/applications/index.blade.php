@@ -151,7 +151,7 @@
             // var doc = new jsPDF('p', 'mm');
             // doc.save("admission_report.pdf")
 
-            var doc = new jsPDF('l', 'pt');
+            var doc = new jsPDF('p', 'pt', [1000, 1000]);
             var res = doc.autoTableHtmlToJson(document.getElementById('admission_report_content'));
 
             res.columns.splice(-2)
