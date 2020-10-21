@@ -15,9 +15,11 @@
 
     <!-- Tab content -->
     <div id="enrollment_details_block" class="tabcontent">
+        @role('admin')
         <div class="row">
             <button id="download_btn" class="pull-right" style="padding: 5px; margin-right: 10px;"><i class="fa fa-download"></i> Download</button>
         </div>
+        @endrole
         <div class="row" id="enrollment_details_content">
             <div class="panel panel-default">
                 <h3 style="margin-left: 10px;"><u>Enrollment Details</u></h3>
@@ -45,7 +47,13 @@
                             </div>
                             <div class="col-md-12">
                                 <label>Enrollment Type: </label>
-                                <span><?php echo $application->enrollment_type ?></span>
+                                <span><?php
+                                    foreach ($enrollment_types as $type => $value) {
+
+                                        if ($application->enrollment_type == $type)
+                                            echo $value;
+                                    }
+                                    ?></span>
                             </div>
                             <div class="col-md-12">
                                 <?php if ($application->enrollment_centre == 'ilorin') {
@@ -88,7 +96,13 @@
 
                     <div class="col-md-6">
                         <label>Gender:</label>
-                        <span><?php echo $application->gender ?></span>
+                        <span><?php
+                            foreach ($genders as $gender_key => $value) {
+
+                                if ($application->gender == $gender_key)
+                                    echo $value;
+                            }
+                            ?></span>
                     </div>
 
                     <div class="col-md-6">
@@ -303,7 +317,7 @@
 @endsection
 
 @section('scripts')
-    <script src="	https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script>
         $('#download_btn').on('click', function () {
             var document_name = $('#applicant-last-name').text() + ' '+
