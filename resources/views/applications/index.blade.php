@@ -119,9 +119,9 @@
                                         echo $value;
                                 }
                                 ?></td>
-                            <td><p>Father: {{$application->father_mobile_phone}}</p>
-                                <p>Mother: {{$application->mother_mobile_phone}}</p>
-                                <p>Sponsor: {{$application->sponsor_mobile_phone}}</p></td>
+                            <td><p>Father: {{$application->father_contact_number_1}}</p>
+                                <p>Mother: {{$application->mother_contact_number_1}}</p>
+                                <p>Sponsor: {{$application->sponsor_contact_number_1}}</p></td>
                             <td>{{date('M,j,Y',strtotime($application->created_at))}}</td>
                             <td>
                                 <a class="btn btn-primary btn-sm" href="{{route('application.show',$application->id)}}">View</a>

@@ -154,12 +154,12 @@
 
                     <div class="col-md-6">
                         <label>Mobile Phone: </label>
-                        <span><?php echo $application->father_mobile_phone ?></span>
+                        <span><?php echo $application->father_contact_number_1 ?></span>
                     </div>
 
                     <div class="col-md-6">
                         <label>Home Phone: </label>
-                        <span><?php echo $application->father_home_phone ?></span>
+                        <span><?php echo $application->father_contact_number_2 ?></span>
                     </div>
 
                     <div class="col-md-6">
@@ -196,12 +196,12 @@
 
                     <div class="col-md-6">
                         <label>Mobile Phone: </label>
-                        <span><?php echo $application->mother_mobile_phone ?></span>
+                        <span><?php echo $application->mother_contact_number_1 ?></span>
                     </div>
 
                     <div class="col-md-6">
                         <label>Home Phone: </label>
-                        <span><?php echo $application->mother_home_phone ?></span>
+                        <span><?php echo $application->mother_contact_number_2 ?></span>
                     </div>
 
                     <div class="col-md-6">
@@ -236,12 +236,12 @@
 
                     <div class="col-md-6">
                         <label>Mobile Phone: </label>
-                        <span><?php echo $application->sponsor_mobile_phone ?></span>
+                        <span><?php echo $application->sponsor_contact_number_1 ?></span>
                     </div>
 
                     <div class="col-md-6">
                         <label>Home Phone: </label>
-                        <span><?php echo $application->sponsor_home_phone ?></span>
+                        <span><?php echo $application->sponsor_contact_number_2 ?></span>
                     </div>
 
                     <div class="col-md-6">
