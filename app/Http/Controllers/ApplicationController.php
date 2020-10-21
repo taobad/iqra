@@ -31,7 +31,7 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $applications = Application::orderBy('id', 'desc')->paginate(10);
+        $applications = Application::orderBy('id', 'desc')->paginate(50);
 
         $data = $this->getApplicationEnums();
         $data['request'] = new Request();
@@ -43,9 +43,9 @@ class ApplicationController extends Controller
         $formatted_query = $this->queryBuilder($request);
         if(!empty($formatted_query)) {
             $applications = Application::where($formatted_query)
-                ->orderBy('created_at', 'desc')->paginate(10);
+                ->orderBy('created_at', 'desc')->paginate(50);
         } else {
-            $applications = Application::orderBy('created_at', 'desc')->paginate(10);
+            $applications = Application::orderBy('created_at', 'desc')->paginate(50);
         }
 
         $data = $this->getApplicationEnums();
