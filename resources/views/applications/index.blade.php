@@ -153,6 +153,9 @@
 
             var doc = new jsPDF('l', 'pt');
             var res = doc.autoTableHtmlToJson(document.getElementById('admission_report_content'));
+
+            res.columns.splice(-2)
+
             doc.autoTable(res.columns, res.data);
             // doc.autoTable(res.columns, res.data, {
             //     startY: doc.autoTableEndPosY() + 50
