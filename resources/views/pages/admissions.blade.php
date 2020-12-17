@@ -9,7 +9,7 @@
                 <p> To complete an online application form, pay N6000 into our bank account and send evidence of payment to +234 803 944 7200. A code will be sent to the telephone line through which you sent payment evidence. You will then tap the blue bar below to enter the code and complete the form. In case you are purchasing more than one form, repeat the process for each.</p>
                 <p>NOTES</p>
                 <ol>
-                    <li>Entrance examination holds on Saturday 24th October 2020</li>
+                    <li>Entrance examination holds on Saturday 6th March 2021</li>
                     <li>Keep handy the code sent to you by the College as you will need it to check the entrance examination result</li>
                     <li>Bank Account Details</li>
                     <ol type="a">
