@@ -72,7 +72,7 @@ class PostController extends Controller
 
         $post = new Post;
         $post->title = $request->title;
-        $post->body = Purifier::clean($request->body);
+        $post->body = $request->body;
         $post->eventdate = $request->eventdate;
 
         $post->save();
@@ -165,7 +165,7 @@ class PostController extends Controller
 
 
         $post->title = $request->title;
-        $post->body = Purifier::clean($request->body);
+        $post->body = $request->body;
         $post->eventdate = $request->eventdate;
 
         $post->save();
