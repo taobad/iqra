@@ -36,9 +36,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portals<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrajuniorcollege">JSS</a></li>
-                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqraseniorcollege">SSS</a></li>
-                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrabasic">IQRA Basic</a></li>
+                        <li><a href="https://schoolreporter.net/app/index.php?url_code=iqrajuniorcollege">JSS</a></li>
+                        <li><a href="https://schoolreporter.net/app/index.php?url_code=iqraseniorcollege">SSS</a></li>
+                        <li><a href="https://schoolreporter.net/app/index.php?url_code=iqrabasic">IQRA Basic</a></li>
                     </ul>
                 </li>
             </ul>
@@ -77,9 +77,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span title="Portals"><i class="glyphicon glyphicon-chevron-down"></i></span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrajuniorcollege">JSS</a></li>
-                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqraseniorcollege">SSS</a></li>
-                        <li><a href="https://schoolreporter.com.ng/app/index.php?url_code=iqrabasic">IQRA Basic</a></li>
+                        <li><a href="https://schoolreporter.net/app/index.php?url_code=iqrajuniorcollege">JSS</a></li>
+                        <li><a href="https://schoolreporter.net/app/index.php?url_code=iqraseniorcollege">SSS</a></li>
+                        <li><a href="https://schoolreporter.net/app/index.php?url_code=iqrabasic">IQRA Basic</a></li>
                     </ul>
                 </li>
             </ul>
